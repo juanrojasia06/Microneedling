@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terapia de Inducción de Colágeno — Guía de Estudio</title>
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #F4FAF9; }
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: #f0f0f0; }
+    ::-webkit-scrollbar-thumb { background: #028090; border-radius: 3px; }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="text/babel">
+    const { useState } = React;
+
+
+const C = {
+  teal: "#028090", navy: "#16314F", accent: "#02C39A",
+  muted: "#6B8FA0", light: "#EDF7F6", offwhite: "#F4FAF9",
+  dark: "#0D1B2A", red: "#C0392B", purple: "#8E44AD",
+  green: "#00897B", indigo: "#1A5276",
+};
+
+const NAV = [
+  { id: "anatomia",   icon: "🧬", label: "Anatomía" },
+  { id: "funciones",  icon: "⚙️", label: "Funciones" },
+  { id: "ciclo",      icon: "🔄", label: "Ciclo de Vida" },
+  { id: "principio",  icon: "⚡", label: "La Técnica" },
+  { id: "respuesta",  icon: "🔬", label: "Respuesta Bio." },
+  { id: "protocolos", icon: "📏", label: "Protocolos" },
+  { id: "dispositivo",icon: "🎯", label: "Dispositivo" },
+  { id: "activos",    icon: "💧", label: "Activos" },
+  { id: "protocolo",  icon: "📋", label: "Paso a Paso" },
+];
+
+// ── UI primitives ──────────────────────────────────────────────────────────
+const badge = (text, color = C.teal) => (
+  <span style={{ background: color, color: "#fff", fontSize: 10, fontWeight: 700, padding: "3px 14px", borderRadius: 20, letterSpacing: 2, textTransform: "uppercase", display: "inline-block", marginBottom: 10 }}>{text}</span>
+);
+
+function SectionTitle({ b, title, sub }) {
+  return (
+    <div style={{ marginBottom: 28 }}>
+      {badge(b)}
+      <h2 style={{ color: C.navy, fontSize: 22, fontWeight: 800, margin: "4px 0 6px", lineHeight: 1.25 }}>{title}</h2>
+      {sub && <p style={{ color: C.muted, fontSize: 13, margin: 0, fontStyle: "italic", lineHeight: 1.6 }}>{sub}</p>}
+    </div>
+  );
+}
+
+function Card({ children, style = {} }) {
+  return <div style={{ background: "#fff", borderRadius: 14, padding: "18px 20px", boxShadow: "0 2px 10px rgba(0,0,0,0.07)", marginBottom: 14, ...style }}>{children}</div>;
+}
+
+function Pill({ children, color = C.teal }) {
+  return <span style={{ background: color + "18", color, fontSize: 11, fontWeight: 600, padding: "3px 12px", borderRadius: 20, display: "inline-block", margin: "3px 4px 3px 0" }}>{children}</span>;
+}
+
+function ImgSlot({ label, h = 200 }) {
+  return (
+    <div style={{ background: C.light, border: `2px dashed ${C.teal}`, borderRadius: 12, height: h, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", color: C.teal, fontSize: 12, fontStyle: "italic", textAlign: "center", padding: 16, marginBottom: 18 }}>
+      <span style={{ fontSize: 30, marginBottom: 8 }}>📸</span>
+      <span style={{ maxWidth: 340 }}>{label}</span>
+    </div>
+  );
+}
+
+function Img({ src, alt, h = 280 }) {
+  return (
+    <div style={{ borderRadius: 14, overflow: "hidden", marginBottom: 18, boxShadow: "0 4px 16px rgba(0,0,0,0.12)", height: h }}>
+      <img src={src} alt={alt} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+    </div>
+  );
+}
+
+function KeyBox({ children, color = C.light, textColor = C.navy }) {
+  return <div style={{ background: color, borderRadius: 10, padding: "10px 16px", marginTop: 12, fontSize: 12, color: textColor, lineHeight: 1.6 }}>{children}</div>;
+}
+
+function Grid({ children, min = 240 }) {
+  return <div style={{ display: "grid", gridTemplateColumns: `repeat(auto-fill,minmax(${min}px,1fr))`, gap: 12 }}>{children}</div>;
+}
+
+// ── SECTION 1: ANATOMÍA ────────────────────────────────────────────────────
+function Anatomia() {
+  const [open, setOpen] = useState(null);
+  const layers = [
+    {
+      name: "EPIDERMIS", depth: "0 – 0,25 mm", color: C.teal,
+      desc: "Capa más externa. Primera línea de defensa del organismo. No contiene vasos sanguíneos (avascular) — se nutre por difusión desde la dermis.",
+      strata: ["Estrato córneo (más superficial)", "Estrato lúcido (solo piel gruesa)", "Estrato granuloso", "Estrato espinoso", "Estrato basal (mitosis activa)"],
+      cells: [
+        { n: "Queratinocitos", d: "90% de la epidermis. Producen queratina. Forman la barrera mecánica principal." },
+        { n: "Melanocitos", d: "En el estrato basal. Producen melanina. Clave en melasma e hiperpigmentación." },
+        { n: "Células de Langerhans", d: "Centinelas inmunológicos. Detectan agentes externos y activan la defensa." },
+      ],
+      clinical: "Objetivo en: melasma, hiperpigmentación, acné superficial (0,25–0,75 mm).",
+    },
+    {
+      name: "DERMIS", depth: "0,3 – 3 mm", color: C.navy,
+      desc: "Capa media. La más rica en estructuras funcionales. Sustenta y nutre la epidermis. Blanco principal del microneedling para rejuvenecimiento y cicatrices.",
+      sublayers: [
+        { n: "Dermis papilar (0,3–1 mm)", d: "Tejido conectivo laxo. Capilares finos, corpúsculos de Meissner, colágeno tipo III." },
+        { n: "Dermis reticular (1–3 mm)", d: "Tejido conectivo denso. Colágeno tipo I (predominante), fibras elásticas, glándulas, folículos." },
+      ],
+      cells: [
+        { n: "Fibroblastos", d: "Células productoras de colágeno (I y III), elastina y sustancia fundamental. El blanco celular más importante del microneedling." },
+        { n: "Fibras de colágeno", d: "Dan firmeza. Tipo I en dermis reticular (gruesas), tipo III en papilar (finas y elásticas)." },
+        { n: "Fibras elásticas", d: "Dan elasticidad y la capacidad de recuperar la forma tras una deformación." },
+        { n: "Capilares sanguíneos", d: "Nutren el tejido. Los más superficiales (papilar) son los que producen el 'rocío sangrante' a >0,5mm." },
+        { n: "Glándula sebácea", d: "Produce sebo. Asociada al folículo piloso. Hiperactividad relacionada con acné." },
+      ],
+      clinical: "Objetivo en: cicatrices, fotoenvejecimiento, rejuvenecimiento, pérdida de firmeza (0,5–2,5 mm).",
+    },
+    {
+      name: "HIPODERMIS", depth: "> 3 mm", color: "#4A7C8A",
+      desc: "Capa profunda compuesta principalmente por tejido adiposo. Soporte mecánico, reserva energética y aislamiento térmico.",
+      cells: [
+        { n: "Adipocitos", d: "Células de grasa organizadas en lóbulos. Dan volumen y amortiguan el tejido." },
+        { n: "Vasos sanguíneos mayores", d: "Arterias y venas principales que abastecen a las capas superiores." },
+        { n: "Nervios profundos", d: "Corpúsculos de Pacini y Ruffini. Detectan presión y vibración profunda." },
+      ],
+      clinical: "No es objetivo del microneedling estético. Se muestra como contexto anatómico de referencia.",
+    },
+  ];
+  return (
+    <div>
+      <SectionTitle b="01 · Anatomía" title="Estructura de la Piel" sub="Todo procedimiento bien ejecutado comienza por saber dónde se trabaja y qué hay en cada capa." />
+      <Img src="https://i.imgur.com/2DkCGGR.jpg" alt="Estructura de la piel — corte transversal 3D" h={280} />
+      {layers.map((l, i) => (
+        <Card key={i}>
+          <div style={{ display: "flex", gap: 14, alignItems: "flex-start", cursor: "pointer" }} onClick={() => setOpen(open === i ? null : i)}>
+            <div style={{ background: l.color, color: "#fff", borderRadius: 10, padding: "10px 14px", textAlign: "center", minWidth: 88, flexShrink: 0 }}>
+              <div style={{ fontSize: 11, fontWeight: 800, letterSpacing: 1 }}>{l.name}</div>
+              <div style={{ fontSize: 10, opacity: 0.8, marginTop: 4 }}>{l.depth}</div>
+            </div>
+            <div style={{ flex: 1 }}>
+              <p style={{ margin: "0 0 8px", color: C.navy, fontSize: 13, lineHeight: 1.6 }}>{l.desc}</p>
+              <KeyBox color={C.light}><strong style={{ color: l.color }}>📍 Relevancia clínica: </strong>{l.clinical}</KeyBox>
+            </div>
+            <span style={{ color: C.muted, fontSize: 18, marginTop: 4 }}>{open === i ? "▲" : "▼"}</span>
+          </div>
+          {open === i && (
+            <div style={{ marginTop: 16, paddingTop: 16, borderTop: `1px solid ${C.light}` }}>
+              {l.strata && (
+                <div style={{ marginBottom: 14 }}>
+                  <p style={{ fontSize: 12, color: C.muted, margin: "0 0 8px", fontWeight: 600 }}>Estratos (superficial → profundo):</p>
+                  <div style={{ display: "flex", flexWrap: "wrap" }}>{l.strata.map((s, j) => <Pill key={j}>{s}</Pill>)}</div>
+                </div>
+              )}
+              {l.sublayers && (
+                <div style={{ marginBottom: 14 }}>
+                  <p style={{ fontSize: 12, color: C.muted, margin: "0 0 8px", fontWeight: 600 }}>Subdivisiones:</p>
+                  {l.sublayers.map((sl, j) => (
+                    <div key={j} style={{ background: C.offwhite, borderRadius: 8, padding: "8px 12px", marginBottom: 6 }}>
+                      <strong style={{ color: l.color, fontSize: 12 }}>{sl.n}: </strong>
+                      <span style={{ color: C.muted, fontSize: 12 }}>{sl.d}</span>
+                    </div>
+                  ))}
+                </div>
+              )}
+              <p style={{ fontSize: 12, color: C.muted, margin: "0 0 8px", fontWeight: 600 }}>Componentes clave:</p>
+              <Grid min={220}>{l.cells.map((c, j) => (
+                <div key={j} style={{ background: C.offwhite, borderRadius: 10, padding: "10px 14px" }}>
+                  <div style={{ fontSize: 12, fontWeight: 700, color: C.navy, marginBottom: 4 }}>{c.n}</div>
+                  <div style={{ fontSize: 11, color: C.muted, lineHeight: 1.5 }}>{c.d}</div>
+                </div>
+              ))}</Grid>
+            </div>
+          )}
+        </Card>
+      ))}
+    </div>
+  );
+}
+
+// ── SECTION 2: FUNCIONES ──────────────────────────────────────────────────
+function Funciones() {
+  const funcs = [
+    { icon: "🛡️", n: "Protección", d: "Barrera física, química y biológica contra agentes mecánicos, químicos, microorganismos y radiación UV. El estrato córneo y los lípidos intercelulares son los componentes principales." },
+    { icon: "🌡️", n: "Termorregulación", d: "Regula la temperatura corporal mediante vasodilatación (libera calor), vasoconstricción (retiene calor) y sudoración (enfría la superficie cutánea)." },
+    { icon: "✋", n: "Sensibilidad", d: "Los receptores cutáneos (Meissner, Merkel, Ruffini, Pacini y terminaciones nerviosas libres) detectan estímulos táctiles, térmicos, dolorosos y de presión profunda." },
+    { icon: "☀️", n: "Síntesis de Vitamina D", d: "La radiación UVB convierte el 7-dehidrocolesterol en vitamina D3 (colecalciferol), fundamental para la absorción de calcio y la salud ósea y inmunológica." },
+    { icon: "🦠", n: "Inmunovigilancia", d: "Las células de Langerhans, queratinocitos y linfocitos residentes detectan y responden a agentes externos, participando activamente en la defensa inmunológica." },
+    { icon: "💧", n: "Barrera Epidérmica", d: "Previene la pérdida transepidérmica de agua (TEWL), manteniendo la hidratación cutánea y la homeostasis del organismo." },
+  ];
+  return (
+    <div>
+      <SectionTitle b="02 · Funciones" title="¿Para qué sirve la piel?" sub="Entender las funciones explica por qué cualquier alteración de la barrera cutánea tiene consecuencias en todo el organismo." />
+      <Grid min={260}>
+        {funcs.map((f, i) => (
+          <Card key={i} style={{ display: "flex", gap: 14, alignItems: "flex-start" }}>
+            <span style={{ fontSize: 28, lineHeight: 1, flexShrink: 0 }}>{f.icon}</span>
+            <div>
+              <h4 style={{ color: C.navy, margin: "0 0 6px", fontSize: 14, fontWeight: 700 }}>{f.n}</h4>
+              <p style={{ color: C.muted, fontSize: 12, margin: 0, lineHeight: 1.6 }}>{f.d}</p>
+            </div>
+          </Card>
+        ))}
+      </Grid>
+    </div>
+  );
+}
+
+// ── SECTION 3: CICLO DE VIDA ──────────────────────────────────────────────
+function Ciclo() {
+  const stages = [
+    { name: "Adolescencia", color: C.red, icon: "📈",
+      changes: ["Hipersecreción sebácea estimulada por andrógenos", "Poros dilatados y tendencia a la obstrucción", "Epidermis más gruesa por hiperproliferación de queratinocitos", "Alta inflamación y tendencia al acné inflamatorio", "Colágeno abundante pero tejido inestable", "Mayor vascularización superficial"],
+      indication: "Indicación principal: Acné activo (0,5–1,0 mm)",
+    },
+    { name: "Adulto Joven (20–40 años)", color: C.teal, icon: "⚖️",
+      changes: ["Renovación celular equilibrada y eficiente", "Epidermis con barrera cutánea íntegra y funcional", "Colágeno tipo I y III bien organizado y abundante", "Elastina íntegra que aporta elasticidad real", "Fibroblastos activos con alta capacidad de síntesis", "Vascularización óptima, hidratación adecuada"],
+      indication: "Indicaciones: Mantenimiento, luminosidad, manchas (0,25–0,75 mm)",
+    },
+    { name: "Envejecimiento", color: C.purple, icon: "📉",
+      changes: ["Disminución de la renovación epidérmica (keratinocitos más lentos)", "Adelgazamiento epidérmico y alteración de la barrera", "Pérdida cuantitativa y cualitativa de colágeno y elastina", "Fibroblastos menos activos → menor síntesis de matriz", "Menor vascularización y pérdida de tejido adiposo (volumen)", "Arrugas, flacidez y pérdida de luminosidad visibles"],
+      indication: "Indicaciones: Rejuvenecimiento, firmeza, cicatrices (1,0–1,5 mm)",
+    },
+  ];
+  return (
+    <div>
+      <SectionTitle b="03 · Ciclo de Vida" title="Cómo Cambia la Piel con el Tiempo" sub="La edad y el estado actual de la piel determinan la profundidad, el activo y el número de sesiones del protocolo." />
+      <Img src="https://i.imgur.com/lX658RN.jpg" alt="Ciclo de vida de la piel — 3 etapas" h={260} />
+      <Grid min={240}>
+        {stages.map((st, i) => (
+          <Card key={i}>
+            <div style={{ background: st.color, color: "#fff", borderRadius: 8, padding: "8px 14px", marginBottom: 14, display: "flex", alignItems: "center", gap: 8 }}>
+              <span style={{ fontSize: 18 }}>{st.icon}</span>
+              <strong style={{ fontSize: 13 }}>{st.name}</strong>
+            </div>
+            {st.changes.map((c, j) => (
+              <div key={j} style={{ display: "flex", gap: 8, marginBottom: 7, alignItems: "flex-start" }}>
+                <span style={{ color: st.color, fontWeight: 700, flexShrink: 0 }}>·</span>
+                <span style={{ fontSize: 12, color: C.navy, lineHeight: 1.5 }}>{c}</span>
+              </div>
+            ))}
+            <KeyBox color={st.color + "14"}>
+              <strong style={{ color: st.color, fontSize: 12 }}>📍 {st.indication}</strong>
+            </KeyBox>
+          </Card>
+        ))}
+      </Grid>
+    </div>
+  );
+}
+
+// ── SECTION 4: LA TÉCNICA ─────────────────────────────────────────────────
+function Principio() {
+  return (
+    <div>
+      <SectionTitle b="04 · La Técnica" title="Principio del Microneedling" sub="La terapia de inducción de colágeno se basa en un mecanismo simple con un impacto biológico real y comprobado." />
+      <Grid min={200}>
+        {[
+          { icon: "⚡", t: "Microlesión Controlada", d: "Las microagujas generan microcanales precisos y controlados en la piel. No hay daño colateral al tejido circundante." },
+          { icon: "🔄", t: "Reparación Activada", d: "El organismo detecta la lesión e inicia su proceso natural de cicatrización, liberando factores de crecimiento al sitio." },
+          { icon: "✨", t: "Renovación Real", d: "Se forman nuevas fibras de colágeno tipo I y III, elastina y sustancia fundamental. La piel mejora desde adentro." },
+        ].map((c, i) => (
+          <Card key={i} style={{ textAlign: "center", padding: 24 }}>
+            <div style={{ fontSize: 36, marginBottom: 10 }}>{c.icon}</div>
+            <h4 style={{ color: C.teal, margin: "0 0 8px", fontSize: 14 }}>{c.t}</h4>
+            <p style={{ color: C.muted, fontSize: 12, margin: 0, lineHeight: 1.6 }}>{c.d}</p>
+          </Card>
+        ))}
+      </Grid>
+      <Card style={{ background: C.navy }}>
+        <h4 style={{ color: C.accent, margin: "0 0 14px", fontSize: 15 }}>⚡ Mecanismo celular — los 4 efectos clave</h4>
+        <Grid min={190}>
+          {[
+            { t: "1. Estimulación de fibroblastos", d: "Activación de las células productoras de colágeno y elastina en la dermis papilar y reticular." },
+            { t: "2. Liberación de factores de crecimiento", d: "TGF-β, PDGF, VEGF y FGF inician el proceso de regeneración tisular desde el interior." },
+            { t: "3. Neocolagenogénesis", d: "Formación de nuevo colágeno tipo I y III que reemplaza las fibras dañadas o envejecidas." },
+            { t: "4. Neoelastogénesis", d: "Síntesis de nuevas fibras elásticas que mejoran la elasticidad y firmeza de la piel." },
+          ].map((m, i) => (
+            <div key={i} style={{ background: "#1E3A5C", borderRadius: 10, padding: 14 }}>
+              <div style={{ color: C.accent, fontSize: 12, fontWeight: 700, marginBottom: 6 }}>{m.t}</div>
+              <div style={{ color: "#B0CDD8", fontSize: 12, lineHeight: 1.5 }}>{m.d}</div>
+            </div>
+          ))}
+        </Grid>
+        <KeyBox color="#1E3A5C" textColor="#B0CDD8">
+          <strong style={{ color: C.accent }}>Principio fundamental: </strong>La microaguja no reemplaza al cuerpo — lo activa. El principio activo potencia lo que el cuerpo ya hace de forma natural.
+        </KeyBox>
+      </Card>
+      <Card>
+        <h4 style={{ color: C.navy, margin: "0 0 12px" }}>📊 Efectos clínicos comprobados</h4>
+        <div style={{ display: "flex", flexWrap: "wrap" }}>
+          {["Inducción de colágeno y elastina", "Mejora de textura, firmeza y elasticidad", "Reducción de cicatrices, poros y líneas finas", "Aumento de absorción de principios activos (hasta 80–90%)", "Mejora de la vascularización", "Renovación celular y reparación tisular"].map((e, i) => (
+            <span key={i} style={{ background: C.light, borderRadius: 20, padding: "5px 14px", fontSize: 12, color: C.teal, fontWeight: 600, margin: "4px 4px 4px 0" }}>✓ {e}</span>
+          ))}
+        </div>
+      </Card>
+    </div>
+  );
+}
+
+// ── SECTION 5: RESPUESTA BIOLÓGICA ────────────────────────────────────────
+function Respuesta() {
+  const fases = [
+    { num: "01", n: "Fase Inflamatoria", t: "0 – 72 horas", color: C.red, icon: "⚡",
+      body: "El cuerpo detecta la microlesión y activa la alarma. Se liberan citoquinas y factores de crecimiento (TGF-β, PDGF, VEGF, FGF) que convocan células reparadoras al sitio. El eritema visible post-procedimiento es la señal externa de esta fase.",
+      detail: ["Liberación inmediata de citoquinas inflamatorias", "Llegada de neutrófilos y macrófagos al tejido", "Activación de plaquetas y factores de coagulación", "Vasodilatación local → eritema visible en superficie"],
+      key: "Sin esta fase, no hay reparación posible.",
+    },
+    { num: "02", n: "Fase Proliferativa", t: "3 – 14 días", color: C.teal, icon: "🔬",
+      body: "Los fibroblastos son convocados al sitio y comienzan a producir nuevo colágeno tipo I y III, elastina y sustancia fundamental. Se forman nuevos capilares (angiogénesis) para nutrir el tejido en reparación. Esta es la fase de construcción real.",
+      detail: ["Migración y proliferación de fibroblastos al sitio", "Síntesis de colágeno tipo I y III (neocolagenogénesis)", "Síntesis de nuevas fibras elásticas (neoelastogénesis)", "Formación de nuevos capilares (angiogénesis)"],
+      key: "Aquí se construye el nuevo tejido.",
+    },
+    { num: "03", n: "Fase de Remodelación", t: "2 – 6 semanas", color: C.purple, icon: "✨",
+      body: "El colágeno recién formado se organiza, madura y se alinea correctamente. Las fibras desorganizadas son progresivamente reemplazadas por fibras ordenadas y funcionales. El resultado clínico visible aparece en esta fase.",
+      detail: ["Reorganización y maduración del colágeno neoformado", "Reemplazo progresivo de colágeno tipo III por tipo I", "Contracción y cierre de la matriz extracelular", "Mejora visible de textura, firmeza y cicatrices"],
+      key: "El resultado clínico visible llega aquí.",
+    },
+  ];
+  return (
+    <div>
+      <SectionTitle b="05 · Respuesta Biológica" title="Lo que Pasa Dentro Después del Procedimiento" sub="La microlesión activa una cascada biológica en 3 fases secuenciales. El resultado es el producto de las 3, no solo del procedimiento en sí." />
+      <Img src="https://i.imgur.com/WADSlKf.jpg" alt="Respuesta biológica — fases de reparación" h={280} />
+      {fases.map((f, i) => (
+        <Card key={i}>
+          <div style={{ display: "flex", gap: 16, alignItems: "flex-start" }}>
+            <div style={{ background: f.color, color: "#fff", borderRadius: 10, padding: "12px 14px", textAlign: "center", minWidth: 74, flexShrink: 0 }}>
+              <div style={{ fontSize: 22 }}>{f.icon}</div>
+              <div style={{ fontSize: 11, fontWeight: 700, marginTop: 4 }}>{f.num}</div>
+              <div style={{ fontSize: 9, opacity: 0.85, marginTop: 3, lineHeight: 1.3 }}>{f.t}</div>
+            </div>
+            <div style={{ flex: 1 }}>
+              <h4 style={{ color: f.color, margin: "0 0 8px", fontSize: 15 }}>{f.n}</h4>
+              <p style={{ color: C.navy, fontSize: 13, lineHeight: 1.7, margin: "0 0 12px" }}>{f.body}</p>
+              <Grid min={200}>
+                {f.detail.map((d, j) => (
+                  <div key={j} style={{ background: f.color + "12", borderRadius: 8, padding: "7px 10px", fontSize: 11, color: C.navy }}>· {d}</div>
+                ))}
+              </Grid>
+              <KeyBox color={f.color + "14"}>
+                <strong style={{ color: f.color, fontSize: 12 }}>→ {f.key}</strong>
+              </KeyBox>
+            </div>
+          </div>
+        </Card>
+      ))}
+      <Card style={{ background: C.light }}>
+        <p style={{ color: C.navy, fontSize: 13, margin: 0, textAlign: "center", fontStyle: "italic", lineHeight: 1.7 }}>
+          <strong style={{ color: C.teal }}>Por eso los resultados no son inmediatos:</strong> el cuerpo necesita completar las 3 fases. Cada sesión reinicia el ciclo y suma al resultado acumulado. Respetar el intervalo entre sesiones no es opcional — es parte del protocolo.
+        </p>
+      </Card>
+    </div>
+  );
+}
+
+// ── SECTION 6: PROTOCOLOS POR PATOLOGÍA ───────────────────────────────────
+function Protocolos() {
+  const [sel, setSel] = useState(0);
+  const pats = [
+    {
+      n: "Melasma", color: C.teal, depth: "0,25 – 0,5 mm", layer: "Epidermis superficial",
+      sessions: "4–6 sesiones", interval: "3–4 semanas", speed: "20–40 Hz",
+      activos: ["Vitamina C", "Ácido Kójico", "Arbutina", "Glutatión", "Niacinamida", "Ácido Hialurónico (bajo PM)"],
+      mech: "Inhibición de melanogénesis. Bloqueo de tirosinasa y reducción de transferencia de melanosomas a queratinocitos. La profundidad superficial evita estimular melanocitos más profundos que empeorarían la mancha.",
+      results: "Reducción progresiva de manchas, unificación del tono, disminución del índice MASI.",
+      comp: "Riesgo de hiperpigmentación postinflamatoria si se excede la profundidad. Fotoprotección SPF 50+ obligatoria durante todo el tratamiento.",
+      evidence: "Nivel Ia — metaanálisis y ECC. Verna et al., 2022 / Lima et al., 2020.",
+      img: "https://i.imgur.com/I1tEdWx.jpg",
+    },
+    {
+      n: "Hiperpigmentación Postinflamatoria", color: C.green, depth: "0,5 – 0,75 mm", layer: "Epidermis profunda",
+      sessions: "4–6 sesiones", interval: "3–4 semanas", speed: "20–40 Hz",
+      activos: ["Ácido Hialurónico", "Vitamina C", "Ácido Kójico", "Niacinamida", "Arbutina"],
+      mech: "Regulación del proceso inflamatorio residual y reducción del depósito de melanina postlesional. Ligeramente más profunda que el melasma porque el pigmento puede encontrarse en capas más bajas de la epidermis.",
+      results: "Aclaramiento de lesiones residuales, mejora del tono, reducción de parches oscuros dispersos.",
+      comp: "Reagudización si hay proceso inflamatorio activo no controlado. No aplicar sobre lesiones activas en curso.",
+      evidence: "Nivel Ib — ECC. Kim et al., 2023 / Fabbrocini, 2021.",
+      img: "https://i.imgur.com/RhA4qVg.jpg",
+    },
+    {
+      n: "Acné Activo", color: C.navy, depth: "0,5 – 1,0 mm", layer: "Epidermis / Dermis papilar superficial",
+      sessions: "4–6 sesiones", interval: "2–3 semanas", speed: "20–40 Hz",
+      activos: ["Ácido Salicílico", "Zinc", "Niacinamida", "Aminoácidos"],
+      mech: "Regulación sebácea, acción antiinflamatoria y queratolítica. Reducción del Cutibacterium acnes. El ácido salicílico penetra por los microcanales directamente hasta el poro obstruido.",
+      results: "Reducción de lesiones inflamatorias, control sebáceo, mejora de textura y reducción de poros visibles.",
+      comp: "Diseminación de lesiones con técnica inadecuada. Contraindicado en acné quístico o nodular activo. No aplicar sobre pústulas abiertas.",
+      evidence: "Nivel Ib — ECC. Hofny et al., 2022 / El-Domyati et al., 2021.",
+      img: "https://i.imgur.com/BrlyUiy.jpg",
+    },
+    {
+      n: "Cicatrices Postacné", color: C.indigo, depth: "1,0 – 2,5 mm", layer: "Dermis reticular",
+      sessions: "6–10 sesiones", interval: "4–6 semanas", speed: "20–40 Hz",
+      activos: ["Aminoácidos", "Péptidos", "Ácido Hialurónico", "Factores de Crecimiento"],
+      mech: "Remodelación de la matriz extracelular. Estimulación de fibroblastos para producción de colágeno tipo I y III que reemplaza el tejido cicatricial desorganizado. La profundidad mayor permite llegar a la base de la cicatriz.",
+      results: "Reducción de profundidad y extensión de cicatrices, mejora de textura, relleno progresivo de depresiones.",
+      comp: "Eritema prolongado y edema transitorio esperados. Poco frecuente: infección si la antisepsia fue inadecuada. Mayor tiempo de recuperación que indicaciones superficiales.",
+      evidence: "Nivel Ia — múltiples metaanálisis. Majid, 2019 / Dogra et al., 2022.",
+      img: "https://i.imgur.com/h2xqHMw.jpg",
+    },
+    {
+      n: "Rejuvenecimiento / Fotoenvejecimiento", color: C.dark, depth: "1,0 – 1,5 mm", layer: "Dermis reticular profunda",
+      sessions: "4–6 sesiones", interval: "4–6 semanas", speed: "20–40 Hz",
+      activos: ["Péptidos", "DMAE", "Aminoácidos", "Factores de Crecimiento", "Silicio Orgánico"],
+      mech: "Neocolagenogénesis y neoelastogénesis. Síntesis de nuevas fibras de soporte dérmico que mejoran firmeza y elasticidad. Mejora también la vascularización dérmica y la hidratación profunda.",
+      results: "Mejora de firmeza, elasticidad y luminosidad. Reducción de líneas finas. Mejora de textura general y tono.",
+      comp: "Eritema y descamación transitoria en los primeros 3–5 días. Autolimitada y esperada. Siempre informar al cliente.",
+      evidence: "Nivel Ib — ECC. Aust et al., 2021 / Hartmann et al., 2023.",
+      img: "https://i.imgur.com/mG8ob8h.jpg",
+    },
+  ];
+  const p = pats[sel];
+  return (
+    <div>
+      <SectionTitle b="06 · Protocolos" title="Profundidad según la Indicación" sub="La profundidad determina la capa que se alcanza — y por tanto qué condición se puede tratar. Selecciona una indicación." />
+      <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 20 }}>
+        {pats.map((pt, i) => (
+          <button key={i} onClick={() => setSel(i)} style={{ padding: "7px 16px", borderRadius: 20, border: `2px solid ${sel === i ? pt.color : "#ddd"}`, background: sel === i ? pt.color : "#fff", color: sel === i ? "#fff" : C.muted, fontSize: 12, fontWeight: sel === i ? 700 : 400, cursor: "pointer", transition: "all 0.15s" }}>{pt.n}</button>
+        ))}
+      </div>
+      <Img src={p.img} alt={p.n} h={240} />
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14 }}>
+        <Card>
+          <h4 style={{ color: p.color, margin: "0 0 14px", fontSize: 14 }}>📏 Parámetros técnicos</h4>
+          {[["Profundidad", p.depth], ["Capa objetivo", p.layer], ["Velocidad", p.speed], ["Sesiones", p.sessions], ["Intervalo", p.interval]].map(([k, v], i) => (
+            <div key={i} style={{ display: "flex", justifyContent: "space-between", padding: "8px 0", borderBottom: i < 4 ? `1px solid ${C.light}` : "none" }}>
+              <span style={{ fontSize: 12, color: C.muted }}>{k}</span>
+              <span style={{ fontSize: 12, color: C.navy, fontWeight: 700 }}>{v}</span>
+            </div>
+          ))}
+        </Card>
+        <Card>
+          <h4 style={{ color: p.color, margin: "0 0 14px", fontSize: 14 }}>💧 Principios activos</h4>
+          <div>{p.activos.map((a, i) => <Pill key={i} color={p.color}>{a}</Pill>)}</div>
+        </Card>
+      </div>
+      <Card>
+        <h4 style={{ color: p.color, margin: "0 0 10px", fontSize: 14 }}>🔬 Mecanismo de acción</h4>
+        <p style={{ color: C.navy, fontSize: 13, lineHeight: 1.7, margin: 0 }}>{p.mech}</p>
+      </Card>
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14 }}>
+        <Card>
+          <h4 style={{ color: C.teal, margin: "0 0 10px", fontSize: 14 }}>✅ Resultados esperados</h4>
+          <p style={{ color: C.navy, fontSize: 13, lineHeight: 1.6, margin: 0 }}>{p.results}</p>
+        </Card>
+        <Card>
+          <h4 style={{ color: C.red, margin: "0 0 10px", fontSize: 14 }}>⚠️ Complicaciones posibles</h4>
+          <p style={{ color: C.navy, fontSize: 13, lineHeight: 1.6, margin: 0 }}>{p.comp}</p>
+        </Card>
+      </div>
+      <Card style={{ background: C.offwhite }}>
+        <span style={{ color: C.muted, fontSize: 11, fontWeight: 700 }}>📚 Evidencia: </span>
+        <span style={{ color: C.navy, fontSize: 12 }}>{p.evidence}</span>
+      </Card>
+    </div>
+  );
+}
+
+// ── SECTION 7: EL DISPOSITIVO ─────────────────────────────────────────────
+function Dispositivo() {
+  return (
+    <div>
+      <SectionTitle b="07 · Dispositivo" title="El Dispositivo y su Impacto en la Piel" sub="Entender cómo funciona el equipo es tan importante como saber qué profundidad usar." />
+      <Img src="https://i.imgur.com/fVlX0K5.jpg" alt="Dispositivo de microneedling en piel" h={280} />
+      <Grid min={250}>
+        {[
+          { icon: "🎯", t: "Cartucho desechable de un solo uso", d: "Garantiza esterilidad total en cada sesión. Nunca se reutiliza bajo ninguna circunstancia. Cambio obligatorio entre pacientes." },
+          { icon: "📏", t: "Profundidad regulable en décimas de mm", d: "Ajustable con precisión según la indicación clínica. Esta exactitud no es posible con rodillos manuales." },
+          { icon: "⚡", t: "Movimiento vertical controlado", d: "La aguja entra y sale perpendicularmente al tejido. Sin arrastre, sin desgarro, sin movimiento horizontal." },
+          { icon: "🔢", t: "Velocidad regulable (Hz)", d: "Controla el número de impactos por segundo. Mayor velocidad = más microcanales por unidad de área." },
+          { icon: "🔴", t: "Eritema inmediato esperado", d: "Normal y esperado. Indica que se activó la respuesta inflamatoria necesaria para iniciar la reparación." },
+          { icon: "💧", t: '"Rocío sangrante" en dermis', d: "Pequeños puntos de sangre a profundidades > 0,5 mm. Normal — indica que se alcanzaron capilares dérmicos. No es error de técnica." },
+        ].map((f, i) => (
+          <Card key={i} style={{ display: "flex", gap: 12, alignItems: "flex-start" }}>
+            <span style={{ fontSize: 24, flexShrink: 0, lineHeight: 1 }}>{f.icon}</span>
+            <div>
+              <h5 style={{ color: C.navy, margin: "0 0 5px", fontSize: 13, fontWeight: 700 }}>{f.t}</h5>
+              <p style={{ color: C.muted, fontSize: 12, margin: 0, lineHeight: 1.5 }}>{f.d}</p>
+            </div>
+          </Card>
+        ))}
+      </Grid>
+      <Card>
+        <h4 style={{ color: C.navy, margin: "0 0 14px" }}>⏱️ Evolución post-procedimiento esperada</h4>
+        <Grid min={150}>
+          {[
+            { t: "0–24h", d: "Eritema e inflamación activa. Piel muy sensible. No exponer al sol ni aplicar maquillaje." },
+            { t: "24–72h", d: "Eritema disminuye. Puede aparecer leve descamación. Hidratación activa." },
+            { t: "3–7 días", d: "Piel normalizada externamente. Proceso de reparación activo internamente." },
+            { t: "2–6 semanas", d: "Resultado visible progresivo. La piel mejora de forma sostenida con cada sesión." },
+          ].map((t, i) => (
+            <div key={i} style={{ background: C.offwhite, borderRadius: 10, padding: 14, boxShadow: "0 1px 6px rgba(0,0,0,0.05)" }}>
+              <div style={{ color: C.teal, fontWeight: 800, fontSize: 14, marginBottom: 6 }}>{t.t}</div>
+              <div style={{ color: C.navy, fontSize: 12, lineHeight: 1.5 }}>{t.d}</div>
+            </div>
+          ))}
+        </Grid>
+      </Card>
+      <Card>
+        <h4 style={{ color: C.red, margin: "0 0 12px" }}>🚫 Contraindicaciones absolutas</h4>
+        <div style={{ display: "flex", flexWrap: "wrap" }}>
+          {["Acné quístico o nodular activo", "Herpes activo en zona a tratar", "Rosácea activa severa", "Psoriasis en zona a tratar", "Queloides o tendencia queloide", "Embarazo", "Isotretinoína reciente (< 6 meses)", "Coagulopatías no controladas"].map((c, i) => (
+            <span key={i} style={{ background: "#FDECEC", color: C.red, fontSize: 11, padding: "4px 12px", borderRadius: 20, fontWeight: 600, margin: "3px 4px 3px 0" }}>⚠️ {c}</span>
+          ))}
+        </div>
+      </Card>
+    </div>
+  );
+}
+
+// ── SECTION 8: ACTIVOS ────────────────────────────────────────────────────
+function Activos() {
+  const [tab, setTab] = useState(0);
+  const groups = [
+    {
+      n: "Despigmentantes", color: C.teal, depth: "0,25 – 0,75 mm (epidermis)",
+      activos: [
+        { n: "Vitamina C (ácido ascórbico)", m: "Inhibe la tirosinasa en el origen de la síntesis de melanina. Antioxidante potente. Mejora luminosidad y estimula también la síntesis de colágeno." },
+        { n: "Ácido Kójico", m: "Bloquea la tirosinasa reduciendo la síntesis de melanina. Derivado de fermentación fúngica. Alta estabilidad en formulación." },
+        { n: "Alfa-Arbutina", m: "Precursor de hidroquinona. Inhibe la tirosinasa de forma selectiva y progresiva. Alta tolerabilidad cutánea." },
+        { n: "Glutatión", m: "Antioxidante intracelular que desactiva la oxidación que intensifica el pigmento. Desvía la melanogénesis hacia feomelano (pigmento más claro)." },
+        { n: "Niacinamida (Vitamina B3)", m: "No bloquea la producción de melanina sino su transporte: evita que el pigmento formado llegue a la superficie de la piel." },
+      ],
+    },
+    {
+      n: "Reguladores de Acné", color: C.navy, depth: "0,5 – 1,0 mm (epidermis / dermis papilar)",
+      activos: [
+        { n: "Ácido Salicílico", m: "Queratolítico liposoluble: limpia el poro desde adentro. Antiinflamatorio potente. Reduce el comedón y la obstrucción folicular." },
+        { n: "Zinc", m: "Regula la producción de sebo por las glándulas sebáceas. Efecto antiinflamatorio y cicatrizante suave." },
+        { n: "Niacinamida", m: "En acné: regula la producción de sebo, reduce el enrojecimiento y mejora la barrera cutánea post-procedimiento." },
+        { n: "Aminoácidos", m: "Soporte nutricional al tejido. Facilitan la reparación epidérmica y la síntesis proteica local post-procedimiento." },
+      ],
+    },
+    {
+      n: "Regeneradores Dérmicos", color: C.indigo, depth: "1,0 – 2,5 mm (dermis papilar y reticular)",
+      activos: [
+        { n: "Ácido Hialurónico (AH)", m: "Glicosaminoglicano que atrae y retiene agua (hasta 1000x su peso). Rellena el tejido desde adentro, restaura volumen e hidratación duradera. Se usa en bajo y alto peso molecular." },
+        { n: "Péptidos biomiméticos", m: "Fragmentos proteicos que señalizan al fibroblasto para producir más colágeno y elastina. Son mensajeros — no dan colágeno directamente, lo estimulan." },
+        { n: "Aminoácidos esenciales", m: "Bloques de construcción del colágeno y elastina. Proporcionan el sustrato necesario para la síntesis de nuevas fibras." },
+        { n: "Factores de Crecimiento (FC)", m: "Proteínas de señalización que aceleran la proliferación celular y la formación de nuevo tejido. Claves en cicatrices profundas y rejuvenecimiento avanzado." },
+        { n: "DMAE", m: "Precursor de acetilcolina. Efecto tensor y reafirmante. Mejora el tono y la firmeza visible de la piel." },
+        { n: "Silicio Orgánico", m: "Estimula la síntesis de colágeno tipo I. Mejora la elasticidad y la resistencia del tejido conjuntivo." },
+      ],
+    },
+  ];
+  const g = groups[tab];
+  return (
+    <div>
+      <SectionTitle b="08 · Principios Activos" title="Cómo Actúa Cada Principio Activo" sub="El activo trabaja exactamente en la capa donde la aguja abrió el canal — ni más profundo ni más superficial. Microlesión y activo son sinérgicos." />
+      <Img src="https://i.imgur.com/XwCGXmz.jpg" alt="Principios activos penetrando por microcanales" h={260} />
+      <div style={{ display: "flex", gap: 8, marginBottom: 20 }}>
+        {groups.map((gr, i) => (
+          <button key={i} onClick={() => setTab(i)} style={{ padding: "7px 16px", borderRadius: 20, border: `2px solid ${tab === i ? gr.color : "#ddd"}`, background: tab === i ? gr.color : "#fff", color: tab === i ? "#fff" : C.muted, fontSize: 12, fontWeight: tab === i ? 700 : 400, cursor: "pointer" }}>{gr.n}</button>
+        ))}
+      </div>
+      <div style={{ marginBottom: 14, display: "flex", alignItems: "center", gap: 12 }}>
+        <span style={{ background: g.color + "18", color: g.color, fontSize: 11, fontWeight: 700, padding: "4px 14px", borderRadius: 20 }}>📏 Profundidad de aplicación: {g.depth}</span>
+      </div>
+      <Grid min={280}>
+        {g.activos.map((a, i) => (
+          <Card key={i} style={{ borderLeft: `4px solid ${g.color}`, paddingLeft: 16 }}>
+            <h5 style={{ color: g.color, margin: "0 0 8px", fontSize: 13 }}>{a.n}</h5>
+            <p style={{ color: C.navy, fontSize: 12, lineHeight: 1.6, margin: 0 }}>{a.m}</p>
+          </Card>
+        ))}
+      </Grid>
+      <Card style={{ background: C.navy }}>
+        <h4 style={{ color: C.accent, margin: "0 0 14px" }}>🔑 Principios de vehiculización efectiva</h4>
+        <Grid min={200}>
+          {[
+            { t: "Penetración optimizada", d: "Los microcanales aumentan la absorción de activos hasta 80–90% comparado con aplicación tópica convencional." },
+            { t: "Ventana de absorción", d: "Los primeros 15–30 minutos post-procedimiento son el momento óptimo para la penetración del activo." },
+            { t: "Sinergia terapéutica", d: "Combinar la profundidad correcta con el activo específico para cada objetivo maximiza el resultado clínico." },
+            { t: "Cierre de microcanales", d: "Los canales se cierran en 24–48h sin dejar cicatriz visible, restaurando la barrera cutánea de forma natural." },
+          ].map((p, i) => (
+            <div key={i} style={{ background: "#1E3A5C", borderRadius: 10, padding: 14 }}>
+              <div style={{ color: C.accent, fontSize: 11, fontWeight: 700, marginBottom: 6 }}>{p.t}</div>
+              <div style={{ color: "#B0CDD8", fontSize: 11, lineHeight: 1.5 }}>{p.d}</div>
+            </div>
+          ))}
+        </Grid>
+      </Card>
+    </div>
+  );
+}
+
+// ── SECTION 9: PROTOCOLO PASO A PASO ─────────────────────────────────────
+function Protocolo() {
+  return (
+    <div>
+      <SectionTitle b="09 · Paso a Paso" title="Protocolo Universal" sub="El orden es el mismo para todas las indicaciones. Lo que cambia entre ellas es la profundidad y el principio activo." />
+      {[
+        { num: "01", icon: "🧴", t: "Limpieza y desengrase", color: C.teal, d: "La piel debe estar libre de residuos, maquillaje y exceso de sebo. Usar limpiador adecuado al tipo de piel. El desengrase garantiza que no haya barrera lipídica que interfiera con la antisepsia ni con la posterior penetración del activo." },
+        { num: "02", icon: "🧪", t: "Antisepsia", color: C.green, d: "Elimina patógenos de la superficie antes de crear microcanales. Los canales son vías directas al tejido dérmico — cualquier microorganismo en superficie puede crear infección. Solución antiséptica según protocolo del centro." },
+        { num: "03", icon: "💧", t: "Aplicación del activo (pre-pasada)", color: C.navy, d: "Aplicar el activo correspondiente antes del primer paso del dispositivo. Los primeros microcanales permiten la penetración inmediata. El activo actúa como lubricante y agente terapéutico simultáneamente." },
+        { num: "04", icon: "🎯", t: "Paso del dispositivo", color: C.indigo, d: "Ajustar la profundidad según la indicación y el área. Realizar pasadas sistemáticas: horizontal, vertical y diagonal para cobertura uniforme. Velocidad y número de pasadas según el protocolo de cada indicación. Reaplicar activo entre pasadas." },
+        { num: "05", icon: "✨", t: "Activo post-pasada final", color: "#12375E", d: "Capa final del principio activo al terminar el procedimiento. Los microcanales permanecen abiertos 15–30 minutos — esta es la ventana óptima de absorción. No masajear ni frotar. No enjuagar." },
+        { num: "06", icon: "🛡️", t: "Cuidados inmediatos", color: C.dark, d: "Activo calmante o reparador (AH, péptidos calmantes). Informar: evitar sol directo, agua muy caliente, maquillaje y activos irritantes (retinol, AHA) las primeras 24–48h. El eritema es normal y autolimitado. Fotoprotección obligatoria." },
+      ].map((s, i) => (
+        <Card key={i} style={{ display: "flex", gap: 16, alignItems: "flex-start" }}>
+          <div style={{ background: s.color, color: "#fff", borderRadius: 10, minWidth: 54, height: 54, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+            <span style={{ fontSize: 18 }}>{s.icon}</span>
+            <span style={{ fontSize: 9, fontWeight: 700, marginTop: 2 }}>{s.num}</span>
+          </div>
+          <div style={{ flex: 1 }}>
+            <h5 style={{ color: s.color, margin: "0 0 6px", fontSize: 14 }}>{s.t}</h5>
+            <p style={{ color: C.navy, fontSize: 12, lineHeight: 1.6, margin: 0 }}>{s.d}</p>
+          </div>
+        </Card>
+      ))}
+      <Card style={{ background: C.navy }}>
+        <h4 style={{ color: C.accent, margin: "0 0 14px" }}>✅ Lo que debes recordar siempre</h4>
+        {[
+          "La profundidad determina la indicación — no es un número arbitrario ni una preferencia personal.",
+          "El activo trabaja solo en la capa que la aguja abrió. No va más profundo ni más superficial.",
+          "El resultado real llega con el tiempo. El procedimiento activa el proceso; el cuerpo construye el resultado.",
+          "A mayor profundidad → mayor estímulo → mayor tiempo de recuperación. Informar siempre al cliente.",
+          "La técnica es sinérgica: la microlesión potencia al activo, y el activo potencia la reparación.",
+          "El cartucho se cambia entre pacientes. Nunca se reutiliza. Sin excepciones.",
+        ].map((t, i) => (
+          <div key={i} style={{ display: "flex", gap: 10, alignItems: "flex-start", marginBottom: 10 }}>
+            <span style={{ color: C.accent, fontSize: 14, lineHeight: 1.4, flexShrink: 0 }}>→</span>
+            <span style={{ color: "#fff", fontSize: 12, lineHeight: 1.6 }}>{t}</span>
+          </div>
+        ))}
+      </Card>
+      <Card style={{ background: C.light }}>
+        <h4 style={{ color: C.navy, margin: "0 0 12px" }}>📋 Factores que modulan la profundidad efectiva real</h4>
+        <Grid min={170}>
+          {[
+            { icon: "💪", f: "Presión aplicada", d: "Mayor presión = mayor penetración efectiva real" },
+            { icon: "⚡", f: "Velocidad de punción", d: "Más lenta = mayor profundidad alcanzada" },
+            { icon: "🌿", f: "Tipo y zona de piel", d: "Piel más fina = menor profundidad recomendada" },
+            { icon: "🎯", f: "Calibre de aguja", d: "Afecta el alcance y uniformidad del microcanal" },
+          ].map((f, i) => (
+            <div key={i} style={{ background: "#fff", borderRadius: 10, padding: 14, textAlign: "center", boxShadow: "0 1px 6px rgba(0,0,0,0.06)" }}>
+              <div style={{ fontSize: 24, marginBottom: 6 }}>{f.icon}</div>
+              <div style={{ color: C.teal, fontWeight: 700, fontSize: 12, marginBottom: 4 }}>{f.f}</div>
+              <div style={{ color: C.muted, fontSize: 11, lineHeight: 1.4 }}>{f.d}</div>
+            </div>
+          ))}
+        </Grid>
+      </Card>
+    </div>
+  );
+}
+
+// ── MAIN ──────────────────────────────────────────────────────────────────
+function App() {
+  const [active, setActive] = useState("anatomia");
+  const views = { anatomia: <Anatomia />, funciones: <Funciones />, ciclo: <Ciclo />, principio: <Principio />, respuesta: <Respuesta />, protocolos: <Protocolos />, dispositivo: <Dispositivo />, activos: <Activos />, protocolo: <Protocolo /> };
+
+  return (
+    <div style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif", background: C.offwhite, minHeight: "100vh" }}>
+      <div style={{ background: C.navy, padding: "22px 28px" }}>
+        <div style={{ background: C.teal, display: "inline-block", borderRadius: 20, padding: "2px 14px", fontSize: 10, color: "#fff", fontWeight: 700, letterSpacing: 2, marginBottom: 8 }}>TÉCNICA EN ESTÉTICA · GUÍA DE ESTUDIO</div>
+        <h1 style={{ color: "#fff", margin: "0 0 4px", fontSize: 22, fontWeight: 800 }}>Terapia de Inducción de Colágeno</h1>
+        <p style={{ color: C.accent, margin: 0, fontSize: 13 }}>Microneedling / Microagujas · Material de referencia completo</p>
+      </div>
+      <div style={{ position: "sticky", top: 0, background: "#fff", borderBottom: `2px solid ${C.light}`, zIndex: 100, overflowX: "auto", display: "flex", padding: "0 16px" }}>
+        {NAV.map(n => (
+          <button key={n.id} onClick={() => setActive(n.id)} style={{ padding: "12px 13px", border: "none", background: "none", cursor: "pointer", color: active === n.id ? C.teal : C.muted, fontWeight: active === n.id ? 700 : 400, borderBottom: active === n.id ? `3px solid ${C.teal}` : "3px solid transparent", fontSize: 12, whiteSpace: "nowrap", transition: "all 0.15s" }}>
+            {n.icon} {n.label}
+          </button>
+        ))}
+      </div>
+      <div style={{ maxWidth: 860, margin: "0 auto", padding: "28px 18px 60px" }}>
+        {views[active]}
+      </div>
+      <div style={{ background: C.navy, padding: "14px 28px", textAlign: "center" }}>
+        <p style={{ color: C.muted, margin: 0, fontSize: 11 }}>Guía de estudio · Terapia de Inducción de Colágeno · Las profundidades son aproximadas y varían según zona corporal, grosor de la piel y dispositivo utilizado.</p>
+      </div>
+    </div>
+  );
+}
+
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<App />);
+  </script>
+</body>
+</html>
