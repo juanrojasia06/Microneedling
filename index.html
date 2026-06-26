@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terapia de Inducción de Colágeno — Guía de Estudio</title>
+<style>
+:root{--teal:#028090;--navy:#16314F;--accent:#02C39A;--muted:#6B8FA0;--light:#EDF7F6;--off:#F4FAF9;--dark:#0D1B2A;--red:#C0392B;--purple:#8E44AD;--green:#00897B;--indigo:#1A5276}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--off);color:var(--navy)}
+.hdr{background:var(--navy);padding:22px 28px}
+.hdr-badge{background:var(--teal);color:#fff;font-size:10px;font-weight:700;padding:2px 14px;border-radius:20px;letter-spacing:2px;text-transform:uppercase;display:inline-block;margin-bottom:8px}
+.hdr h1{color:#fff;font-size:22px;font-weight:800;margin-bottom:4px}
+.hdr p{color:var(--accent);font-size:13px}
+.nav{position:sticky;top:0;background:#fff;border-bottom:2px solid var(--light);z-index:100;display:flex;overflow-x:auto;padding:0 16px}
+.nav::-webkit-scrollbar{height:0}
+.nb{padding:12px 13px;border:none;background:none;cursor:pointer;color:var(--muted);font-weight:400;border-bottom:3px solid transparent;font-size:12px;white-space:nowrap;transition:all .15s;font-family:inherit}
+.nb.active{color:var(--teal);font-weight:700;border-bottom-color:var(--teal)}
+main{max-width:860px;margin:0 auto;padding:28px 18px 60px}
+.sec{display:none}.sec.active{display:block}
+.sb{background:var(--teal);color:#fff;font-size:10px;font-weight:700;padding:3px 14px;border-radius:20px;letter-spacing:2px;text-transform:uppercase;display:inline-block;margin-bottom:10px}
+h2.st{font-size:22px;font-weight:800;color:var(--navy);margin:4px 0 6px;line-height:1.25}
+p.ss{color:var(--muted);font-size:13px;font-style:italic;line-height:1.6;margin-bottom:28px}
+.card{background:#fff;border-radius:14px;padding:18px 20px;box-shadow:0 2px 10px rgba(0,0,0,.07);margin-bottom:14px}
+.grid{display:grid;gap:12px}
+.g2{grid-template-columns:repeat(auto-fill,minmax(240px,1fr))}
+.g3{grid-template-columns:repeat(auto-fill,minmax(200px,1fr))}
+.g4{grid-template-columns:repeat(auto-fill,minmax(160px,1fr))}
+.pill{font-size:11px;font-weight:600;padding:3px 12px;border-radius:20px;display:inline-block;margin:3px 4px 3px 0}
+.kbox{border-radius:10px;padding:10px 16px;margin-top:12px;font-size:12px;line-height:1.6}
+.iw{border-radius:14px;overflow:hidden;margin-bottom:18px;box-shadow:0 4px 16px rgba(0,0,0,.12)}
+.iw img{width:100%;display:block;max-height:300px;object-fit:cover}
+details{margin-bottom:14px}
+details .card{margin-bottom:0;cursor:pointer}
+summary{display:flex;gap:14px;align-items:flex-start;list-style:none}
+summary::-webkit-details-marker{display:none}
+.sbadge{color:#fff;border-radius:10px;padding:10px 14px;text-align:center;min-width:88px;flex-shrink:0;font-size:11px;font-weight:800;letter-spacing:1px}
+.sarrow{color:var(--muted);font-size:18px;margin-left:auto;flex-shrink:0;margin-top:4px;transition:.2s}
+details[open] .sarrow{transform:rotate(180deg)}
+.dbody{margin-top:16px;padding-top:16px;border-top:1px solid var(--light)}
+.tbtns{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+.tbtn{padding:7px 16px;border-radius:20px;border:2px solid #ddd;background:#fff;color:var(--muted);font-size:12px;cursor:pointer;font-family:inherit;transition:all .15s}
+.tp{display:none}.tp.active{display:block}
+.stepn{color:#fff;border-radius:10px;min-width:54px;height:54px;display:flex;flex-direction:column;align-items:center;justify-content:center;flex-shrink:0;font-size:18px}
+.tag-r{background:#FDECEC;color:var(--red);font-size:11px;padding:4px 12px;border-radius:20px;font-weight:600;display:inline-block;margin:3px 4px 3px 0}
+footer{background:var(--navy);padding:14px 28px;text-align:center;color:var(--muted);font-size:11px}
+@media print{
+  .nav,.hdr-badge{display:none}
+  .hdr{padding:12px 0;background:white}.hdr h1{color:var(--navy);font-size:18px}.hdr p{color:var(--teal)}
+  .sec{display:block!important}.sec+.sec{page-break-before:always}
+  details>*{display:block!important}
+  .tp{display:block!important;margin-bottom:20px}
+  .tbtns{display:none}
+  .iw img{max-height:200px}
+  .card{box-shadow:none;border:1px solid #eee}
+  footer{display:none}
+  body{background:white}
+  main{padding:0}
+}
+</style>
+</head>
+<body>
+<div class="hdr"><div class="hdr-badge">Técnica en Estética · Guía de Estudio</div><h1>Terapia de Inducción de Colágeno</h1><p>Microneedling / Microagujas · Material de referencia completo</p></div>
+<nav class="nav" id="nav"></nav>
+<main>
+  <div id="anatomia" class="sec"></div>
+  <div id="funciones" class="sec"></div>
+  <div id="ciclo" class="sec"></div>
+  <div id="principio" class="sec"></div>
+  <div id="respuesta" class="sec"></div>
+  <div id="protocolos" class="sec"></div>
+  <div id="dispositivo" class="sec"></div>
+  <div id="activos" class="sec"></div>
+  <div id="protocolo" class="sec"></div>
+</main>
+<footer>Guía de estudio · Terapia de Inducción de Colágeno · Las profundidades son aproximadas y varían según zona corporal, grosor de la piel y dispositivo utilizado.</footer>
+<script>
+const C={teal:'#028090',navy:'#16314F',accent:'#02C39A',muted:'#6B8FA0',light:'#EDF7F6',off:'#F4FAF9',dark:'#0D1B2A',red:'#C0392B',purple:'#8E44AD',green:'#00897B',indigo:'#1A5276'};
+const NAV=[{id:'anatomia',icon:'🧬',l:'Anatomía'},{id:'funciones',icon:'⚙️',l:'Funciones'},{id:'ciclo',icon:'🔄',l:'Ciclo de Vida'},{id:'principio',icon:'⚡',l:'La Técnica'},{id:'respuesta',icon:'🔬',l:'Respuesta Bio.'},{id:'protocolos',icon:'📏',l:'Protocolos'},{id:'dispositivo',icon:'🎯',l:'Dispositivo'},{id:'activos',icon:'💧',l:'Activos'},{id:'protocolo',icon:'📋',l:'Paso a Paso'}];
+const sb=(b,c=C.teal)=>`<span class="sb" style="background:${c}">${b}</span>`;
+const sh=(b,t,s)=>`${sb(b)}<h2 class="st">${t}</h2>${s?`<p class="ss">${s}</p>`:''}`;
+const card=(h,st='')=>`<div class="card" style="${st}">${h}</div>`;
+const kb=(h,bg=C.light,col=C.navy)=>`<div class="kbox" style="background:${bg};color:${col}">${h}</div>`;
+const pill=(t,c=C.teal)=>`<span class="pill" style="background:${c}18;color:${c}">${t}</span>`;
+const imgw=(s,a)=>`<div class="iw"><img src="${s}" alt="${a}" loading="lazy"></div>`;
+const h4=(t,c=C.navy,mb=14)=>`<h4 style="color:${c};margin:0 0 ${mb}px;font-size:14px">${t}</h4>`;
+
+// DATA
+const LAYERS=[
+  {name:'EPIDERMIS',depth:'0–0,25 mm',color:C.teal,
+   desc:'Capa más externa. Primera línea de defensa. No contiene vasos sanguíneos (avascular) — se nutre por difusión desde la dermis. Proceso clave: <strong>queratinización</strong> (28–30 días) — el queratinocito nace en la capa basal, asciende por las subcapas y llega a la superficie como célula anucleada. Por eso los tratamientos no muestran todos sus efectos de inmediato.',
+   clinical:'Objetivo en: melasma, hiperpigmentación, acné superficial (0,25–0,75 mm).',
+   strata:['Estrato córneo — células descamativas inactivas (muertas)','Estrato lúcido — solo en palmas y plantas','Estrato granuloso','Estrato espinoso','Estrato basal — mitosis activa, origen del queratinocito'],
+   cells:[
+     {n:'Queratinocitos (~80%)',d:'El "cemento celular" de la epidermis. Producen queratina y forman la barrera mecánica principal. Ascienden desde la capa basal hasta la superficie en el proceso de queratinización.'},
+     {n:'Melanocitos — Melanogénesis',d:'En el estrato basal. Producen melanina: Feomelanina (tonos amarillos y rojizos — piel clara) y Eumelanina (tonos café, marrón y oscuro — piel morena). Importante en microneedling: la injuria puede estimular melanina y causar manchas si no se maneja correctamente el fototipo.'},
+     {n:'Células de Langerhans',d:'"Policías" de la epidermis. Función inmunológica: detectan elementos extraños (bacterias, desechos, sustancias dañinas) y activan la defensa. Por eso, tras el procedimiento, el sistema inmune responde.'},
+     {n:'Células de Merkel',d:'Conectan con terminaciones nerviosas y transmiten sensaciones de tacto suave, frío, calor hacia el sistema nervioso central. Explican la sensibilidad post-procedimiento.'},
+   ],
+   extra:[
+     {n:'🔑 Manto ácido / Manto hidrolipídico',d:'Recubrimiento protector formado por secreciones glandulares y desechos cutáneos. Determina el biotipo cutáneo (tipo de piel: grasa, seca, mixta). Se diferencia del fototipo (escala de Fitzpatrick — respuesta al sol y riesgo de pigmentación). Ambos deben evaluarse antes del tratamiento.'},
+   ]},
+  {name:'UNIÓN DERMOEPIDÉRMICA',depth:'~0,25 mm',color:'#5B8FA8',
+   desc:'Zona de intercambio entre epidermis y dermis. Formada por <strong>crestas dérmicas</strong> que invaginan la epidermis, aumentando la superficie de contacto para la nutrición. La epidermis no tiene vasos propios — depende 100% de esta zona para recibir nutrientes y oxígeno de la dermis.',
+   clinical:'Clave en envejecimiento: las crestas se aplanan después de los 25 años → la epidermis recibe menos soporte → piel más delgada, opaca y con menor capacidad de reparación. Las microagujas estimulan el recambio cutáneo y mejoran esta oxigenación.',
+   cells:[
+     {n:'En piel joven',d:'Crestas pronunciadas → mayor área de contacto → mejor intercambio de nutrientes y oxígeno entre dermis y epidermis.'},
+     {n:'Con el envejecimiento (>25 años)',d:'Crestas se aplanan progresivamente → menor paso de nutrientes hacia la epidermis → piel más fina, menos luminosa, con menor respuesta de recuperación. Esto justifica clínicamente el tratamiento con microagujas.'},
+     {n:'Beneficio del microneedling aquí',d:'Al atravesar la epidermis con microagujas se estimula el recambio celular y se mejora la oxigenación del tejido epitelial y del tejido conectivo de la dermis papilar.'},
+   ]},
+  {name:'DERMIS',depth:'0,3–3 mm',color:C.navy,
+   desc:'Capa media. La más rica en estructuras funcionales. Sustenta y nutre la epidermis. Contiene el <strong>fibroblasto</strong> — célula estrella del microneedling — encargado de producir colágeno, elastina y reticulina.',
+   clinical:'Objetivo en: cicatrices, fotoenvejecimiento, rejuvenecimiento (0,5–2,5 mm).',
+   sublayers:[
+     {n:'Dermis papilar (0,3–1 mm)',d:'Tejido conectivo laxo. Contiene las papilas dérmicas que contactan la epidermis, capilares finos, corpúsculos de Meissner y fibras de colágeno tipo III (más finas).'},
+     {n:'Dermis reticular (1–3 mm)',d:'Tejido conectivo denso. Colágeno tipo I (predominante — mayor resistencia), fibras elásticas, folículos pilosos, glándulas sebáceas y sudoríparas, vasos sanguíneos y linfáticos, terminaciones nerviosas profundas.'},
+   ],
+   cells:[
+     {n:'Fibroblastos',d:'Células productoras de colágeno (tipos I y III), elastina y reticulina. El blanco celular más importante del microneedling. Cuando se estimulan correctamente, producen fibras nuevas que mejoran firmeza y estructura.'},
+     {n:'Fibras de colágeno',d:'Dan firmeza. Tipo I en dermis reticular (gruesas, mayor resistencia); tipo III en dermis papilar (finas, más elásticas). Se deterioran con el envejecimiento y la exposición solar.'},
+     {n:'Fibras elásticas',d:'Dan elasticidad y capacidad de recuperar la forma. Se degradan con la edad → flacidez y pérdida de turgencia.'},
+     {n:'Sustancia fundamental amorfa',d:'Contiene glicosaminoglicanos (azúcares) como el ácido hialurónico (AH). El AH junto con el colágeno da a la piel una textura similar a una gelatina: firme, hidratada, turgente. Se deteriora con el envejecimiento, el sol, factores ambientales y endógenos.'},
+     {n:'Capilares sanguíneos',d:'Nutren y oxigenan el tejido. Los más superficiales (dermis papilar) son los que producen el "rocío sangrante" a profundidades >0,5mm.'},
+     {n:'Vasos linfáticos y macrófagos',d:'Drenaje y limpieza: eliminan residuos y desechos celulares generados tras la lesión controlada. Esenciales en la fase inflamatoria.'},
+   ]},
+  {name:'HIPODERMIS',depth:'> 3 mm',color:'#4A7C8A',
+   desc:'Capa profunda compuesta principalmente por tejido adiposo. Soporte mecánico, reserva energética, aislamiento térmico y termoprotección.',
+   clinical:'No es objetivo del microneedling estético. Su reducción depende del gasto calórico y el ejercicio — no de la microaguja.',
+   cells:[
+     {n:'Adipocitos',d:'Células de grasa organizadas en lóbulos. Almacenan triglicéridos, agua y proteínas. Dan volumen, amortiguan traumatismos y actúan como reserva energética. Pueden reproducirse a diferencia de las neuronas.'},
+     {n:'Vasos sanguíneos mayores',d:'Arterias y venas principales que abastecen las capas superiores con nutrientes y oxígeno.'},
+     {n:'Nervios profundos',d:'Corpúsculos de Pacini (presión profunda) y Ruffini (temperatura y estiramiento).'},
+   ]},
+];
+const FUNCS=[
+  {icon:'🛡️',n:'Protección',d:'Barrera física, química y biológica contra agentes mecánicos, químicos, microorganismos y radiación UV.'},
+  {icon:'🌡️',n:'Termorregulación',d:'Regula la temperatura corporal mediante vasodilatación, vasoconstricción y sudoración.'},
+  {icon:'✋',n:'Sensibilidad',d:'Los receptores cutáneos (Meissner, Merkel, Ruffini, Pacini) detectan estímulos táctiles, térmicos, dolorosos y de presión.'},
+  {icon:'☀️',n:'Síntesis de Vitamina D',d:'La radiación UVB convierte el 7-dehidrocolesterol en vitamina D3, fundamental para la absorción de calcio y la salud ósea.'},
+  {icon:'🦠',n:'Inmunovigilancia',d:'Las células de Langerhans, queratinocitos y linfocitos residentes participan activamente en la defensa inmunológica.'},
+  {icon:'💧',n:'Barrera Epidérmica',d:'Previene la pérdida transepidérmica de agua (TEWL), manteniendo la hidratación y la homeostasis del organismo.'},
+];
+const STAGES=[
+  {name:'Adolescencia',color:C.red,icon:'📈',changes:['Hipersecreción sebácea estimulada por andrógenos','Poros dilatados y tendencia a la obstrucción','Epidermis más gruesa por hiperproliferación de queratinocitos','Alta inflamación y tendencia al acné inflamatorio','Colágeno abundante pero tejido inestable','Mayor vascularización superficial'],ind:'Indicación principal: Acné activo (0,5–1,0 mm)'},
+  {name:'Adulto Joven (20–40)',color:C.teal,icon:'⚖️',changes:['Renovación celular equilibrada y eficiente','Epidermis con barrera cutánea íntegra y funcional','Colágeno tipo I y III bien organizado y abundante','Elastina íntegra que aporta elasticidad real','Fibroblastos activos con alta capacidad de síntesis','Vascularización óptima, hidratación adecuada'],ind:'Indicaciones: Mantenimiento, luminosidad, manchas (0,25–0,75 mm)'},
+  {name:'Envejecimiento',color:C.purple,icon:'📉',changes:['Disminución de la renovación epidérmica','Adelgazamiento epidérmico y alteración de la barrera','Pérdida cuantitativa y cualitativa de colágeno y elastina','Fibroblastos menos activos → menor síntesis de matriz','Menor vascularización y pérdida de tejido adiposo','Arrugas, flacidez y pérdida de luminosidad visibles'],ind:'Indicaciones: Rejuvenecimiento, firmeza, cicatrices (1,0–1,5 mm)'},
+];
+const AGING_FACTORS={
+  intrin:{
+    title:'Envejecimiento Intrínseco',subtitle:'Factores internos — genética y tiempo',color:C.navy,icon:'🧬',
+    img:'<img src="https://i.imgur.com/2wjt0lq.jpg" alt="Envejecimiento intrínseco" style="width:100%;border-radius:8px;display:block;max-height:180px;object-fit:cover">',
+    factors:[
+      {k:'Genética',v:'Determina la velocidad de envejecimiento, la producción de colágeno y la respuesta de reparación celular.'},
+      {k:'Tiempo biológico',v:'A partir de los 25 años comienza el descenso progresivo de fibroblastos activos y la producción de fibras de soporte.'},
+      {k:'Unión dermoepidérmica',v:'Las crestas que nutren la epidermis se aplanan con la edad → la epidermis recibe menos oxígeno y nutrientes → piel más fina, opaca y con menor capacidad de recuperación.'},
+      {k:'Descenso hormonal',v:'La caída de estrógenos (menopausia) reduce la síntesis de colágeno y la hidratación dérmica.'},
+      {k:'Estrés oxidativo celular',v:'Acumulación de daño en el ADN celular que reduce la eficiencia de la reparación natural.'},
+    ]
+  },
+  extrin:{
+    title:'Envejecimiento Extrínseco',subtitle:'Factores externos — ambiente y hábitos',color:'#B7410E',icon:'☀️',
+    img:'<img src="https://i.imgur.com/xvxkHTH.jpg" alt="Envejecimiento extrínseco" style="width:100%;border-radius:8px;display:block;max-height:180px;object-fit:cover">',
+    factors:[
+      {k:'Radiación UV (principal factor)',v:'Degrada directamente el colágeno y el ácido hialurónico. Estimula la melanina → manchas. Genera radicales libres que dañan las células dérmicas.'},
+      {k:'Contaminación ambiental',v:'Partículas que penetran la barrera epidérmica y generan inflamación crónica subclínica.'},
+      {k:'Tabaco',v:'Reduce la oxigenación tisular y destruye fibras de colágeno y elastina acelerando el envejecimiento.'},
+      {k:'Alimentación y azúcar',v:'La glicosilación (azúcar unida a proteínas) endurece las fibras de colágeno y reduce su funcionalidad.'},
+      {k:'Sueño y estrés crónico',v:'El cortisol elevado inhibe la síntesis de colágeno y acelera la degradación de la matriz dérmica.'},
+    ]
+  }
+};
+const FASES=[
+  {num:'01',n:'Fase Inflamatoria',t:'0–72 horas',color:C.red,icon:'⚡',
+   img1:'https://i.imgur.com/jBipC34.jpg',img2:'https://i.imgur.com/hTEbSLO.jpg',
+   body:'El cuerpo detecta la microlesión y activa la alarma. Se desencadena la <strong>hemostasia</strong>: las plaquetas se activan, el calcio participa en la cascada de coagulación y se forma un coágulo que actúa como barrera para proteger la herida. Simultáneamente se liberan citoquinas y factores de crecimiento (TGF-β, PDGF, VEGF, FGF) que convocan células reparadoras al sitio.',
+   detail:['Hemostasia inmediata — formación de coágulo por plaquetas y cascada de coagulación','Liberación de citoquinas inflamatorias (señales de alarma)','Llegada de neutrófilos y glóbulos blancos — eliminan bacterias y células muertas','Vasodilatación local → eritema, calor y sensibilidad visibles en superficie'],
+   key:'Sin esta fase, no hay reparación posible. El eritema post-procedimiento ES la señal de que esta fase se activó correctamente.',
+   note:'La hemostasia ocurre antes de la inflamación: primero se detiene el sangrado, luego llegan las células de defensa.'},
+  {num:'02',n:'Fase Proliferativa',t:'3–21 días',color:C.teal,icon:'🔬',
+   img1:'https://i.imgur.com/YZDmFNM.jpg',img2:'https://i.imgur.com/KiJQxoL.jpg',
+   body:'El tejido comienza a regenerarse activamente. Los <strong>fibroblastos</strong> son convocados al sitio y se convierten en las células constructoras: producen colágeno (tipos I y III), elastina y reticulina — las fibras que dan firmeza, elasticidad y estructura a la piel. Se forman nuevos capilares (angiogénesis) para nutrir el tejido en construcción y se crea tejido de granulación.',
+   detail:['Migración y proliferación de fibroblastos al sitio de lesión','Síntesis de colágeno tipo I y III — neocolagenogénesis','Síntesis de elastina y reticulina — neoelastogénesis','Formación de tejido de granulación y nuevos capilares (angiogénesis)'],
+   key:'Aquí se construye el nuevo tejido. En una cicatriz atrófica, el objetivo es estimular esta fase para que produzca nuevas fibras y mejore la depresión o irregularidad.',
+   note:'La reparación también depende de oxígeno, nutrientes, microcirculación, estado de la piel y cuidados posteriores — no solo del dispositivo.'},
+  {num:'03',n:'Fase de Remodelación',t:'2–6 semanas (hasta meses)',color:C.purple,icon:'✨',
+   img1:'https://i.imgur.com/rjSmmnm.jpg',img2:'https://i.imgur.com/ZDRiw3c.jpg',
+   body:'Las fibras de colágeno recién formadas se reorganizan, maduran y se alinean correctamente. El colágeno tipo III (provisional) es progresivamente reemplazado por colágeno tipo I (más resistente). La piel mejora su firmeza, reparación y uniformidad. <strong>Analogía de la docente:</strong> es como arreglar una pared — primero se ponen los ladrillos (tejido nuevo), luego se resana (organización de fibras) y finalmente se pinta (superficie uniforme y mejorada).',
+   detail:['Reorganización y maduración del colágeno neoformado','Reemplazo de colágeno tipo III provisional por tipo I más resistente','Contracción y cierre progresivo de la matriz extracelular','Mejora visible de textura, firmeza, cicatrices y tono de la piel'],
+   key:'El resultado clínico visible llega aquí — semanas después del procedimiento, no al día siguiente.',
+   note:'Las 3 fases están conectadas y no ocurren de forma aislada: primero se controla la lesión, luego se construye tejido nuevo y finalmente se reorganiza para mejorar la calidad de la piel.'},
+];
+const PATS=[
+  {n:'Melasma',c:C.teal,depth:'0,25–0,5 mm',layer:'Epidermis superficial',sess:'4–6',intv:'3–4 sem',spd:'20–40 Hz',img:'https://i.imgur.com/I1tEdWx.jpg',
+   pins:[{n:'24 Pins',u:'Blanqueamiento / Hidratación / Principio activo'},{n:'36 Pins',u:'Blanqueamiento / Rejuvenecimiento facial / BB Glow'}],
+   zonas:[{z:'Frente',pf:'0,25–0,5 mm',pg:'0,5–0,75 mm'},{z:'Periocular',pf:'0,25 mm',pg:'0,5 mm'},{z:'Nariz',pf:'0,25 mm',pg:'0,5 mm'},{z:'Entrecejo',pf:'0,25–0,5 mm',pg:'0,5–1,0 mm'}],
+   act:['Vitamina C','Ácido Kójico','Arbutina','Glutatión','Niacinamida','AH (bajo PM)'],mech:'Inhibición de melanogénesis. Bloqueo de tirosinasa y reducción de transferencia de melanosomas a queratinocitos. La profundidad superficial evita estimular melanocitos más profundos que empeorarían la mancha.',res:'Reducción progresiva de manchas, unificación del tono, disminución del índice MASI.',comp:'Riesgo de hiperpigmentación postinflamatoria si se excede la profundidad. Fotoprotección SPF 50+ obligatoria.',ev:'Nivel Ia — Verna et al., 2022 / Lima et al., 2020.'},
+  {n:'Hiperpigmentación Postinflamatoria',c:C.green,depth:'0,5–0,75 mm',layer:'Epidermis profunda',sess:'4–6',intv:'3–4 sem',spd:'20–40 Hz',img:'https://i.imgur.com/RhA4qVg.jpg',
+   pins:[{n:'24 Pins',u:'Blanqueamiento / Patas de gallo / Principio activo'},{n:'36 Pins',u:'Blanqueamiento / Hidratación / Rejuvenecimiento facial'}],
+   zonas:[{z:'Frente',pf:'0,25–0,5 mm',pg:'0,5–0,75 mm'},{z:'Mejilla y mentón',pf:'0,5–1 mm',pg:'1,0–2,0 mm'},{z:'Arco cigomático',pf:'0,5 mm',pg:'0,5–1,0 mm'}],
+   act:['Ácido Hialurónico','Vitamina C','Ácido Kójico','Niacinamida','Arbutina'],mech:'Regulación del proceso inflamatorio residual y reducción del depósito de melanina postlesional. Ligeramente más profunda que el melasma porque el pigmento puede estar en capas más bajas de la epidermis.',res:'Aclaramiento de lesiones residuales, mejora del tono, reducción de parches oscuros dispersos.',comp:'Reagudización si hay proceso inflamatorio activo. No aplicar sobre lesiones activas en curso.',ev:'Nivel Ib — Kim et al., 2023 / Fabbrocini, 2021.'},
+  {n:'Acné Activo',c:C.navy,depth:'0,5–1,0 mm',layer:'Epidermis / Dermis papilar',sess:'4–6',intv:'2–3 sem',spd:'20–40 Hz',img:'https://i.imgur.com/BrlyUiy.jpg',
+   pins:[{n:'9 Pins',u:'Acné / Estrías / Alopecia / Secuelas acné / Principio activo'},{n:'12 Pins',u:'Acné / Estrías / Alopecia / Secuelas acné / Arruga profunda'}],
+   zonas:[{z:'Frente',pf:'0,25–0,5 mm',pg:'0,5–0,75 mm'},{z:'Mejilla y mentón',pf:'0,5–1 mm',pg:'1,0–2,0 mm'},{z:'Nariz',pf:'0,25 mm',pg:'0,5 mm'}],
+   act:['Ácido Salicílico','Zinc','Niacinamida','Aminoácidos'],mech:'Regulación sebácea, acción antiinflamatoria y queratolítica. Reducción del Cutibacterium acnes. El ácido salicílico penetra por los microcanales directamente hasta el poro obstruido.',res:'Reducción de lesiones inflamatorias, control sebáceo, mejora de textura y reducción de poros visibles.',comp:'Diseminación de lesiones con técnica inadecuada. Contraindicado en acné quístico o nodular activo.',ev:'Nivel Ib — Hofny et al., 2022 / El-Domyati et al., 2021.'},
+  {n:'Cicatrices Postacné',c:C.indigo,depth:'1,0–2,5 mm',layer:'Dermis reticular',sess:'6–10',intv:'4–6 sem',spd:'20–40 Hz',img:'https://i.imgur.com/h2xqHMw.jpg',
+   pins:[{n:'12 Pins',u:'Acné profundo / Arruga profunda / Secuelas acné / Principio activo'},{n:'9 Pins',u:'Acné / Estrías / Secuelas acné'}],
+   zonas:[{z:'Cicatrices faciales',pf:'1,0–1,25 mm',pg:'1,5–2,0 mm'},{z:'Mejilla y mentón',pf:'0,5–1 mm',pg:'1,0–2,0 mm'}],
+   act:['Aminoácidos','Péptidos','Ácido Hialurónico','Factores de Crecimiento'],mech:'Remodelación de la matriz extracelular. Estimulación de fibroblastos para producción de colágeno tipo I y III que reemplaza el tejido cicatricial desorganizado.',res:'Reducción de profundidad y extensión de cicatrices, mejora de textura, relleno progresivo de depresiones.',comp:'Eritema prolongado y edema transitorio esperados. Infección poco frecuente si la antisepsia fue inadecuada.',ev:'Nivel Ia — Majid, 2019 / Dogra et al., 2022.'},
+  {n:'Rejuvenecimiento / Fotoenvejecimiento',c:C.dark,depth:'1,0–1,5 mm',layer:'Dermis reticular profunda',sess:'4–6',intv:'4–6 sem',spd:'20–40 Hz',img:'https://i.imgur.com/mG8ob8h.jpg',
+   pins:[{n:'36 Pins',u:'Blanqueamiento / Hidratación / Rejuvenecimiento facial general / BB Glow'},{n:'42 Pins',u:'Blanqueamiento / Hidratación / Rejuvenecimiento facial general / BB Glow'}],
+   zonas:[{z:'Frente',pf:'0,25–0,5 mm',pg:'0,5–0,75 mm'},{z:'Mejilla y mentón',pf:'0,5–1 mm',pg:'1,0–2,0 mm'},{z:'Cicatrices faciales',pf:'1,0–1,25 mm',pg:'1,5–2,0 mm'},{z:'Estrías',pf:'1,0–1,5 mm',pg:'1,5–2,0 mm'}],
+   act:['Péptidos','DMAE','Aminoácidos','Factores de Crecimiento','Silicio Orgánico'],mech:'Neocolagenogénesis y neoelastogénesis. Síntesis de nuevas fibras de soporte dérmico que mejoran firmeza y elasticidad. Mejora también la vascularización dérmica y la hidratación profunda.',res:'Mejora de firmeza, elasticidad y luminosidad. Reducción de líneas finas y mejora de textura general.',comp:'Eritema y descamación transitoria en los primeros 3–5 días. Autolimitada. Siempre informar al cliente.',ev:'Nivel Ib — Aust et al., 2021 / Hartmann et al., 2023.'},
+];
+const VEL_TABLE=[
+  {rng:'< 0,5 mm',rpm:'6.500 rpm',clicks:'108 clics/seg',level:'1–2'},
+  {rng:'0,5–0,75 mm',rpm:'7.500 rpm',clicks:'125 clics/seg',level:'2'},
+  {rng:'0,75–1,25 mm',rpm:'8.500 rpm',clicks:'141 clics/seg',level:'3'},
+  {rng:'1,25–1,5 mm',rpm:'9.500 rpm',clicks:'159 clics/seg',level:'4'},
+  {rng:'1,5–2,5 mm',rpm:'10.000 rpm',clicks:'166 clics/seg',level:'5'},
+];
+const GROUPS=[
+  {n:'Despigmentantes',c:C.teal,depth:'0,25–0,75 mm (epidermis)',act:[{n:'Vitamina C (ácido ascórbico)',m:'Inhibe la tirosinasa en el origen de la síntesis de melanina. Antioxidante potente. Mejora luminosidad y estimula la síntesis de colágeno.'},{n:'Ácido Kójico',m:'Bloquea la tirosinasa reduciendo la síntesis de melanina. Derivado de fermentación fúngica. Alta estabilidad en formulación.'},{n:'Alfa-Arbutina',m:'Precursor de hidroquinona. Inhibe la tirosinasa de forma selectiva y progresiva. Alta tolerabilidad cutánea.'},{n:'Glutatión',m:'Antioxidante intracelular que desactiva la oxidación que intensifica el pigmento. Desvía la melanogénesis hacia feomelano (pigmento más claro).'},{n:'Niacinamida (Vitamina B3)',m:'No bloquea la producción de melanina sino su transporte: evita que el pigmento formado llegue a la superficie de la piel.'}]},
+  {n:'Reguladores de Acné',c:C.navy,depth:'0,5–1,0 mm (epidermis / dermis papilar)',act:[{n:'Ácido Salicílico',m:'Queratolítico liposoluble: limpia el poro desde adentro. Antiinflamatorio potente. Reduce el comedón y la obstrucción folicular.'},{n:'Zinc',m:'Regula la producción de sebo por las glándulas sebáceas. Efecto antiinflamatorio y cicatrizante suave.'},{n:'Niacinamida',m:'Regula la producción de sebo, reduce el enrojecimiento y mejora la barrera cutánea post-procedimiento.'},{n:'Aminoácidos',m:'Soporte nutricional al tejido. Facilitan la reparación epidérmica y la síntesis proteica local.'}]},
+  {n:'Regeneradores Dérmicos',c:C.indigo,depth:'1,0–2,5 mm (dermis papilar y reticular)',act:[{n:'Ácido Hialurónico (AH)',m:'Glicosaminoglicano que atrae y retiene agua (hasta 1000x su peso). Rellena el tejido desde adentro, restaura volumen e hidratación duradera.'},{n:'Péptidos biomiméticos',m:'Fragmentos proteicos que señalizan al fibroblasto para producir más colágeno y elastina. Son mensajeros — no dan colágeno directamente, lo estimulan.'},{n:'Aminoácidos esenciales',m:'Bloques de construcción del colágeno y elastina. Proporcionan el sustrato necesario para la síntesis de nuevas fibras.'},{n:'Factores de Crecimiento (FC)',m:'Proteínas de señalización que aceleran la proliferación celular y la formación de nuevo tejido. Claves en cicatrices profundas y rejuvenecimiento avanzado.'},{n:'DMAE',m:'Precursor de acetilcolina. Efecto tensor y reafirmante. Mejora el tono y la firmeza visible de la piel.'},{n:'Silicio Orgánico',m:'Estimula la síntesis de colágeno tipo I. Mejora la elasticidad y la resistencia del tejido conjuntivo.'}]},
+];
+const STEPS=[
+  {num:'01',icon:'🧴',t:'Limpieza y desengrase',c:C.teal,d:'La piel debe estar libre de residuos, maquillaje y exceso de sebo. El desengrase garantiza que no haya barrera lipídica que interfiera con la antisepsia ni con la penetración del activo.'},
+  {num:'02',icon:'🧪',t:'Antisepsia',c:C.green,d:'Elimina patógenos de la superficie antes de crear microcanales. Los canales son vías directas al tejido dérmico — cualquier microorganismo puede crear infección.'},
+  {num:'03',icon:'💧',t:'Aplicación del activo (pre-pasada)',c:C.navy,d:'Aplicar el activo antes del primer paso del dispositivo. Los primeros microcanales permiten la penetración inmediata. El activo actúa como lubricante y agente terapéutico.'},
+  {num:'04',icon:'🎯',t:'Paso del dispositivo',c:C.indigo,d:'Ajustar la profundidad según la indicación. Pasadas sistemáticas: horizontal, vertical y diagonal para cobertura uniforme. Reaplicar activo entre pasadas.'},
+  {num:'05',icon:'✨',t:'Activo post-pasada final',c:'#12375E',d:'Capa final del principio activo. Los microcanales permanecen abiertos 15–30 minutos — ventana óptima de absorción. No masajear ni frotar.'},
+  {num:'06',icon:'🛡️',t:'Cuidados inmediatos',c:C.dark,d:'Activo calmante o reparador (AH, péptidos). Evitar sol, agua caliente, maquillaje y activos irritantes las primeras 24–48h. El eritema es normal. Fotoprotección obligatoria.'},
+];
+
+// RENDERS
+function rAnatomia(){
+  return sh('01 · Anatomía','Estructura de la Piel','Todo procedimiento bien ejecutado comienza por saber dónde se trabaja y qué hay en cada capa — y qué células la componen.')+
+  `<div class="iw"><img src="https://i.imgur.com/pziMzKp.jpg" alt="Estructura de la piel — capas y células" loading="lazy" style="width:100%;display:block;max-height:340px;object-fit:cover"></div>`+
+  LAYERS.map((l,i)=>`<details><summary class="card"><div class="sbadge" style="background:${l.color}">${l.name}<div style="font-size:10px;opacity:.8;margin-top:4px">${l.depth}</div></div><div style="flex:1"><p style="color:${C.navy};font-size:13px;line-height:1.6;margin-bottom:8px">${l.desc}</p>${kb(`<strong style="color:${l.color}">📍 Relevancia clínica: </strong>${l.clinical}`)}</div><span class="sarrow">▼</span></summary><div class="dbody">${l.strata?`<p style="font-size:12px;color:${C.muted};margin:0 0 8px;font-weight:600">Estratos (superficial → profundo):</p><div style="margin-bottom:14px">${l.strata.map(s=>pill(s)).join('')}</div>`:''} ${l.sublayers?`<p style="font-size:12px;color:${C.muted};margin:0 0 8px;font-weight:600">Subdivisiones:</p>${l.sublayers.map(sl=>`<div style="background:${C.off};border-radius:8px;padding:8px 12px;margin-bottom:6px"><strong style="color:${l.color};font-size:12px">${sl.n}: </strong><span style="color:${C.muted};font-size:12px">${sl.d}</span></div>`).join('')}`:''}
+  ${l.cells?`<p style="font-size:12px;color:${C.muted};margin:8px 0;font-weight:600">Componentes y células clave:</p><div class="grid g2">${l.cells.map(c=>`<div style="background:${C.off};border-radius:10px;padding:10px 14px"><div style="font-size:12px;font-weight:700;color:${C.navy};margin-bottom:4px">${c.n}</div><div style="font-size:11px;color:${C.muted};line-height:1.5">${c.d}</div></div>`).join('')}</div>`:''}
+  ${l.extra?l.extra.map(e=>`<div style="background:${C.light};border-radius:10px;padding:12px 16px;margin-top:12px"><strong style="color:${C.teal};font-size:12px">${e.n}: </strong><span style="font-size:12px;color:${C.navy}">${e.d}</span></div>`).join(''):''}
+  </div></details>`).join('');
+}
+function rFunciones(){
+  return sh('02 · Funciones','¿Para qué sirve la piel?','Entender las funciones explica por qué cualquier alteración de la barrera cutánea tiene consecuencias en todo el organismo.')+
+  `<div class="grid g2">${FUNCS.map(f=>`<div class="card" style="display:flex;gap:14px;align-items:flex-start"><span style="font-size:28px;flex-shrink:0">${f.icon}</span><div><h4 style="color:${C.navy};margin:0 0 6px;font-size:14px">${f.n}</h4><p style="color:${C.muted};font-size:12px;margin:0;line-height:1.6">${f.d}</p></div></div>`).join('')}</div>`;
+}
+function rCiclo(){
+  const af=AGING_FACTORS;
+  const afCard=(a)=>`<div class="card" style="border-top:4px solid ${a.color}">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px"><span style="font-size:24px">${a.icon}</span><div><h4 style="color:${a.color};margin:0;font-size:15px">${a.title}</h4><p style="color:${C.muted};font-size:12px;margin:0">${a.subtitle}</p></div></div>
+    <div style="background:${C.light};border-radius:10px;padding:12px;margin-bottom:14px;display:flex;align-items:center;justify-content:center;min-height:100px;border:2px dashed ${a.color}20;color:${a.color};font-size:12px;text-align:center;font-style:italic">${a.img}</div>
+    <div class="grid g2">${a.factors.map(f=>`<div style="background:${C.off};border-radius:8px;padding:10px 12px"><div style="font-size:12px;font-weight:700;color:${C.navy};margin-bottom:4px">${f.k}</div><div style="font-size:11px;color:${C.muted};line-height:1.5">${f.v}</div></div>`).join('')}
+    </div></div>`;
+  return sh('03 · Ciclo de Vida','Cómo Cambia la Piel con el Tiempo','La edad y el estado actual de la piel determinan la profundidad, el activo y el número de sesiones del protocolo.')+
+  imgw('https://i.imgur.com/lX658RN.jpg','Ciclo de vida de la piel')+
+  `<div class="grid g3">${STAGES.map(st=>`<div class="card"><div style="background:${st.color};color:#fff;border-radius:8px;padding:8px 14px;margin-bottom:14px;display:flex;align-items:center;gap:8px"><span style="font-size:18px">${st.icon}</span><strong style="font-size:13px">${st.name}</strong></div>${st.changes.map(c=>`<div style="display:flex;gap:8px;margin-bottom:7px"><span style="color:${st.color};font-weight:700;flex-shrink:0">·</span><span style="font-size:12px;color:${C.navy};line-height:1.5">${c}</span></div>`).join('')}${kb(`<strong style="color:${st.color};font-size:12px">📍 ${st.ind}</strong>`,st.color+'14')}</div>`).join('')}</div>`+
+  `<div style="margin:24px 0 10px"><h3 style="color:${C.navy};font-size:16px;font-weight:700">¿Por qué envejece la piel? Factores intrínsecos y extrínsecos</h3><p style="color:${C.muted};font-size:12px;margin-top:4px">El envejecimiento cutáneo es el resultado de factores biológicos internos y factores ambientales externos que actúan simultáneamente sobre las capas de la piel.</p></div>`+
+  `<div class="grid g2">${afCard(af.intrin)}${afCard(af.extrin)}</div>`+
+  `<div class="card" style="background:${C.light};border-left:4px solid ${C.navy}"><h4 style="color:${C.navy};margin:0 0 8px">🔗 Unión Dermoepidérmica y el Envejecimiento</h4><p style="color:${C.navy};font-size:13px;line-height:1.7;margin:0">Con el paso del tiempo — especialmente <strong>a partir de los 25 años</strong> — las crestas dérmicas que forman la unión dermoepidérmica se aplanan progresivamente. Esto reduce la superficie de contacto entre la epidermis y la dermis, disminuyendo el paso de nutrientes y oxígeno hacia la epidermis, que no tiene vasos propios. El resultado: piel más fina, menos luminosa y con menor capacidad de recuperación. Las microagujas estimulan el recambio celular y mejoran la oxigenación de esta zona, contribuyendo a revertir parcialmente este proceso.</p></div>`;
+}
+function rPrincipio(){
+  return sh('04 · La Técnica','Principio del Microneedling','La terapia de inducción de colágeno se basa en un mecanismo simple con un impacto biológico real y comprobado.')+
+  `<div class="grid g3" style="margin-bottom:14px">${[{icon:'⚡',t:'Microlesión Controlada',d:'Las microagujas generan microcanales precisos y controlados en la piel. No hay daño colateral al tejido circundante.'},{icon:'🔄',t:'Reparación Activada',d:'El organismo detecta la lesión e inicia su proceso natural de cicatrización, liberando factores de crecimiento al sitio.'},{icon:'✨',t:'Renovación Real',d:'Se forman nuevas fibras de colágeno tipo I y III, elastina y sustancia fundamental. La piel mejora desde adentro.'}].map(c=>`<div class="card" style="text-align:center;padding:24px"><div style="font-size:36px;margin-bottom:10px">${c.icon}</div><h4 style="color:${C.teal};margin:0 0 8px;font-size:14px">${c.t}</h4><p style="color:${C.muted};font-size:12px;margin:0;line-height:1.6">${c.d}</p></div>`).join('')}</div>`+
+  `<div class="card" style="background:${C.navy}">${h4('⚡ Mecanismo celular — los 4 efectos clave',C.accent)}<div class="grid g2">${[{t:'1. Estimulación de fibroblastos',d:'Activación de las células productoras de colágeno y elastina en la dermis papilar y reticular.'},{t:'2. Liberación de factores de crecimiento',d:'TGF-β, PDGF, VEGF y FGF inician el proceso de regeneración tisular desde el interior.'},{t:'3. Neocolagenogénesis',d:'Formación de nuevo colágeno tipo I y III que reemplaza las fibras dañadas o envejecidas.'},{t:'4. Neoelastogénesis',d:'Síntesis de nuevas fibras elásticas que mejoran la elasticidad y firmeza de la piel.'}].map(m=>`<div style="background:#1E3A5C;border-radius:10px;padding:14px"><div style="color:${C.accent};font-size:12px;font-weight:700;margin-bottom:6px">${m.t}</div><div style="color:#B0CDD8;font-size:12px;line-height:1.5">${m.d}</div></div>`).join('')}${kb(`<strong style="color:${C.accent}">Principio fundamental: </strong><span style="color:#B0CDD8">La microaguja no reemplaza al cuerpo — lo activa. El principio activo potencia lo que el cuerpo ya hace de forma natural.</span>`,'#1E3A5C','#B0CDD8')}</div>`+
+  `<div class="card">${h4('📊 Efectos clínicos comprobados')}${['Inducción de colágeno y elastina','Mejora de textura, firmeza y elasticidad','Reducción de cicatrices, poros y líneas finas','Aumento de absorción de activos (hasta 80–90%)','Mejora de la vascularización','Renovación celular y reparación tisular'].map(e=>`<span style="background:${C.light};border-radius:20px;padding:5px 14px;font-size:12px;color:${C.teal};font-weight:600;display:inline-block;margin:4px 4px 4px 0">✓ ${e}</span>`).join('')}</div>`;
+}
+function rRespuesta(){
+  return sh('05 · Respuesta Biológica','Lo que Pasa Dentro Después del Procedimiento','La microlesión activa una cascada biológica en 3 fases secuenciales. El resultado es el producto de las 3, no solo del procedimiento en sí.')+
+  FASES.map(f=>`<div class="card">
+    <div style="display:flex;gap:16px;align-items:flex-start">
+      <div style="background:${f.color};color:#fff;border-radius:10px;padding:12px 14px;text-align:center;min-width:74px;flex-shrink:0">
+        <div style="font-size:22px">${f.icon}</div>
+        <div style="font-size:11px;font-weight:700;margin-top:4px">${f.num}</div>
+        <div style="font-size:9px;opacity:.85;margin-top:3px;line-height:1.3">${f.t}</div>
+      </div>
+      <div style="flex:1">
+        <h4 style="color:${f.color};margin:0 0 8px;font-size:15px">${f.n}</h4>
+        <p style="color:${C.navy};font-size:13px;line-height:1.7;margin:0 0 12px">${f.body}</p>
+        <div class="grid g2" style="margin-bottom:12px">${f.detail.map(d=>`<div style="background:${f.color}12;border-radius:8px;padding:7px 10px;font-size:11px;color:${C.navy}">· ${d}</div>`).join('')}</div>
+        <div class="grid" style="grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px">
+          ${f.img1?`<div style="border-radius:10px;overflow:hidden"><img src="${f.img1}" alt="${f.n} — foto real" loading="lazy" style="width:100%;display:block;max-height:180px;object-fit:cover"></div>`:`<div style="background:${C.off};border:2px dashed ${f.color}60;border-radius:10px;min-height:120px;display:flex;align-items:center;justify-content:center;text-align:center;padding:10px;color:${C.muted};font-size:11px;font-style:italic">📸 Foto real de esta fase</div>`}
+          ${f.img2?`<div style="border-radius:10px;overflow:hidden"><img src="${f.img2}" alt="${f.n} — 3D capas" loading="lazy" style="width:100%;display:block;max-height:180px;object-fit:cover"></div>`:`<div style="background:${C.off};border:2px dashed ${f.color}60;border-radius:10px;min-height:120px;display:flex;align-items:center;justify-content:center;text-align:center;padding:10px;color:${C.muted};font-size:11px;font-style:italic">📸 Gráfico 3D pendiente<br><small>sube a Imgur y comparte el link</small></div>`}
+        </div>
+        <div style="background:${f.color}14;border-radius:8px;padding:8px 12px;margin-bottom:8px"><strong style="color:${f.color};font-size:12px">→ ${f.key}</strong></div>
+        <div style="background:${C.light};border-radius:8px;padding:8px 12px;font-size:11px;color:${C.muted};line-height:1.5">📝 <em>${f.note}</em></div>
+      </div>
+    </div>
+  </div>`).join('')+
+  `<div class="card" style="background:${C.light}"><p style="color:${C.navy};font-size:13px;margin:0;text-align:center;font-style:italic;line-height:1.7"><strong style="color:${C.teal}">Por eso los resultados no son inmediatos:</strong> el cuerpo necesita completar las 3 fases. Cada sesión reinicia el ciclo y suma al resultado acumulado. Respetar el intervalo entre sesiones no es opcional — es parte del protocolo.</p></div>`;
+}
+function rProtocolos(){
+  return sh('06 · Protocolos','Profundidad según la Indicación','La profundidad determina la capa que se alcanza. Selecciona una indicación para ver su protocolo completo.')+
+  `<div class="tbtns" id="ptabs">${PATS.map((p,i)=>`<button class="tbtn${i===0?' active':''}" style="${i===0?`background:${p.c};border-color:${p.c};color:#fff`:''}" data-tab="pp${i}" data-color="${p.c}">${p.n}</button>`).join('')}</div>`+
+  `<div id="ppanes">${PATS.map((p,i)=>`<div class="tp${i===0?' active':''}" id="pp${i}">${imgw(p.img,p.n)}
+  <div class="grid" style="grid-template-columns:1fr 1fr;gap:14px">
+    <div class="card">${h4('📏 Parámetros técnicos',p.c)}${[['Profundidad',p.depth],['Capa objetivo',p.layer],['Velocidad',p.spd],['Sesiones',p.sess+' sesiones'],['Intervalo',p.intv]].map(([k,v],j)=>`<div style="display:flex;justify-content:space-between;padding:8px 0;${j<4?'border-bottom:1px solid '+C.light:''}"><span style="font-size:12px;color:${C.muted}">${k}</span><span style="font-size:12px;color:${C.navy};font-weight:700">${v}</span></div>`).join('')}</div>
+    <div class="card">${h4('💧 Principios activos',p.c)}<div>${p.act.map(a=>pill(a,p.c)).join('')}</div></div>
+  </div>
+  <div class="grid" style="grid-template-columns:1fr 1fr;gap:14px">
+    <div class="card" style="border-left:4px solid ${p.c}">${h4('📌 Cartuchos / Pines recomendados',p.c)}
+      ${p.pins.map(pi=>`<div style="background:${C.off};border-radius:8px;padding:8px 12px;margin-bottom:8px"><strong style="color:${p.c};font-size:13px">${pi.n}</strong><p style="color:${C.muted};font-size:11px;margin:3px 0 0">${pi.u}</p></div>`).join('')}
+    </div>
+    <div class="card" style="border-left:4px solid ${C.muted}">${h4('🗺️ Profundidad por zona facial',C.navy)}
+      <table style="width:100%;border-collapse:collapse;font-size:11px">
+        <tr style="background:${C.off}"><th style="padding:5px 8px;text-align:left;color:${C.muted};font-weight:600">Zona</th><th style="padding:5px 8px;color:${C.teal};font-weight:600">Piel fina</th><th style="padding:5px 8px;color:${C.navy};font-weight:600">Piel gruesa</th></tr>
+        ${p.zonas.map((z,zi)=>`<tr style="background:${zi%2===0?'#fff':C.off}"><td style="padding:5px 8px;color:${C.navy}">${z.z}</td><td style="padding:5px 8px;color:${C.teal};font-weight:600">${z.pf}</td><td style="padding:5px 8px;color:${C.navy};font-weight:600">${z.pg}</td></tr>`).join('')}
+      </table>
+    </div>
+  </div>
+  <div class="card">${h4('🔬 Mecanismo de acción',p.c)}<p style="color:${C.navy};font-size:13px;line-height:1.7;margin:0">${p.mech}</p></div>
+  <div class="grid" style="grid-template-columns:1fr 1fr;gap:14px">
+    <div class="card">${h4('✅ Resultados esperados',C.teal)}<p style="color:${C.navy};font-size:13px;line-height:1.6;margin:0">${p.res}</p></div>
+    <div class="card">${h4('⚠️ Complicaciones posibles',C.red)}<p style="color:${C.navy};font-size:13px;line-height:1.6;margin:0">${p.comp}</p></div>
+  </div>
+  <div class="card" style="background:${C.off}"><span style="color:${C.muted};font-size:11px;font-weight:700">📚 Evidencia: </span><span style="color:${C.navy};font-size:12px">${p.ev}</span></div>
+  </div>`).join('')}</div>`+
+  `<div class="card" style="margin-top:20px"><h4 style="color:${C.navy};margin:0 0 14px">🗺️ Referencia de profundidades por zona facial</h4>
+  <div class="grid" style="grid-template-columns:1fr 1fr;gap:16px;align-items:start">
+    <div>
+      <div id="facial-map-img"><img src="https://i.imgur.com/6NOUanb.jpg" alt="Mapa de profundidades por zona facial" loading="lazy" style="width:100%;border-radius:12px;display:block"></div>
+    </div>
+    <div>
+      <p style="font-size:12px;color:${C.muted};margin:0 0 10px;font-weight:600">Profundidad recomendada por zona — piel fina vs. piel gruesa</p>
+      <table style="width:100%;border-collapse:collapse;font-size:11px">
+        <tr style="background:${C.navy};color:#fff"><th style="padding:6px 8px;text-align:left">Zona</th><th style="padding:6px 8px;color:#7DD8C0">🟢 Piel fina</th><th style="padding:6px 8px;color:#A8C8E8">🔵 Piel gruesa</th></tr>
+        ${[['Frente','0,25–0,5 mm','0,5–0,75 mm'],['Entrecejo','0,25–0,5 mm','0,5–1,0 mm'],['Periocular','0,25 mm','0,5 mm'],['Nariz','0,25 mm','0,5 mm'],['Arco cigomático','0,5 mm','0,5–1,0 mm'],['Labio superior','0,25 mm','0,5–0,75 mm'],['Mejilla y mentón','0,5–1 mm','1,0–2,0 mm'],['Cicatrices faciales','1,0–1,25 mm','1,5–2,0 mm'],['Estrías','1,0–1,5 mm','1,5–2,0 mm'],['Cicatrices quirúrgicas / quemaduras','2,0–2,5 mm','2,0–2,5 mm']].map(([z,pf,pg],i)=>`<tr style="background:${i%2===0?'#fff':C.off}"><td style="padding:5px 8px;color:${C.navy};font-size:11px">${z}</td><td style="padding:5px 8px;color:${C.green};font-weight:700;font-size:11px">${pf}</td><td style="padding:5px 8px;color:${C.teal};font-weight:700;font-size:11px">${pg}</td></tr>`).join('')}
+      </table>
+    </div>
+  </div>
+  <div style="margin-top:16px;padding-top:16px;border-top:1px solid ${C.light}">
+    <h4 style="color:${C.navy};margin:0 0 10px;font-size:14px">⚡ Velocidad recomendada según profundidad</h4>
+    <table style="width:100%;border-collapse:collapse;font-size:12px">
+      <tr style="background:${C.navy};color:#fff"><th style="padding:8px 12px;text-align:left">Profundidad</th><th style="padding:8px 12px">RPM</th><th style="padding:8px 12px">Clics/seg</th><th style="padding:8px 12px">Nivel</th></tr>
+      ${VEL_TABLE.map((v,i)=>{const cols=['#028090','#00897B','#1A5276','#16314F','#0D1B2A'];return `<tr style="background:${cols[i]};color:#fff"><td style="padding:8px 12px;font-weight:700">${v.rng}</td><td style="padding:8px 12px;text-align:center">${v.rpm}</td><td style="padding:8px 12px;text-align:center">${v.clicks}</td><td style="padding:8px 12px;text-align:center;font-weight:700">${v.level}</td></tr>`}).join('')}
+    </table>
+    <p style="color:${C.muted};font-size:11px;margin-top:8px;font-style:italic">Mayor profundidad = mayor velocidad recomendada para una penetración efectiva y uniforme.</p>
+  </div>
+  </div>`;
+}
+function rDispositivo(){
+  return sh('07 · Dispositivo','El Dispositivo y su Impacto en la Piel','Entender cómo funciona el equipo es tan importante como saber qué profundidad usar.')+
+  imgw('https://i.imgur.com/fVlX0K5.jpg','Dispositivo de microneedling')+
+  `<div class="grid g2">${[{icon:'🎯',t:'Cartucho desechable de un solo uso',d:'Garantiza esterilidad total en cada sesión. Nunca se reutiliza bajo ninguna circunstancia. Cambio obligatorio entre pacientes.'},{icon:'📏',t:'Profundidad regulable en décimas de mm',d:'Ajustable con precisión según la indicación clínica. Esta exactitud no es posible con rodillos manuales.'},{icon:'⚡',t:'Movimiento vertical controlado',d:'La aguja entra y sale perpendicularmente al tejido. Sin arrastre, sin desgarro, sin movimiento horizontal.'},{icon:'🔢',t:'Velocidad regulable (Hz)',d:'Controla el número de impactos por segundo. Mayor velocidad = más microcanales por unidad de área.'},{icon:'🔴',t:'Eritema inmediato esperado',d:'Normal y esperado. Indica que se activó la respuesta inflamatoria necesaria para iniciar la reparación.'},{icon:'💧',t:'Rocío sangrante en dermis',d:'Pequeños puntos de sangre a profundidades > 0,5 mm. Normal — indica que se alcanzaron capilares dérmicos. No es error de técnica.'}].map(f=>`<div class="card" style="display:flex;gap:12px;align-items:flex-start"><span style="font-size:24px;flex-shrink:0">${f.icon}</span><div><h5 style="color:${C.navy};margin:0 0 5px;font-size:13px">${f.t}</h5><p style="color:${C.muted};font-size:12px;margin:0;line-height:1.5">${f.d}</p></div></div>`).join('')}</div>`+
+  `<div class="card">${h4('⏱️ Evolución post-procedimiento')}<div class="grid g4">${[{t:'0–24h',d:'Eritema e inflamación activa. Piel muy sensible. Sin sol ni maquillaje.'},{t:'24–72h',d:'Eritema disminuye. Puede aparecer leve descamación. Hidratación activa.'},{t:'3–7 días',d:'Piel normalizada externamente. Proceso de reparación activo internamente.'},{t:'2–6 semanas',d:'Resultado visible progresivo. La piel mejora de forma sostenida.'}].map(t=>`<div style="background:${C.off};border-radius:10px;padding:14px"><div style="color:${C.teal};font-weight:800;font-size:14px;margin-bottom:6px">${t.t}</div><div style="color:${C.navy};font-size:12px;line-height:1.5">${t.d}</div></div>`).join('')}</div></div>`+
+  `<div class="card">${h4('🚫 Contraindicaciones absolutas',C.red)}${['Acné quístico o nodular activo','Herpes activo en zona a tratar','Rosácea activa severa','Psoriasis en zona a tratar','Queloides o tendencia queloide','Embarazo','Isotretinoína reciente (< 6 meses)','Coagulopatías no controladas'].map(c=>`<span class="tag-r">⚠️ ${c}</span>`).join('')}</div>`;
+}
+function rActivos(){
+  return sh('08 · Principios Activos','Cómo Actúa Cada Principio Activo','El activo trabaja exactamente en la capa donde la aguja abrió el canal. Microlesión y activo son sinérgicos.')+
+  imgw('https://i.imgur.com/XwCGXmz.jpg','Principios activos por profundidad')+
+  `<div class="tbtns" id="atabs">${GROUPS.map((g,i)=>`<button class="tbtn${i===0?' active':''}" style="${i===0?`background:${g.c};border-color:${g.c};color:#fff`:''}" data-tab="ag${i}" data-color="${g.c}">${g.n}</button>`).join('')}</div>`+
+  `<div id="apanes">${GROUPS.map((g,i)=>`<div class="tp${i===0?' active':''}" id="ag${i}"><div style="margin-bottom:14px"><span style="background:${g.c}18;color:${g.c};font-size:11px;font-weight:700;padding:4px 14px;border-radius:20px">📏 ${g.depth}</span></div><div class="grid g2">${g.act.map(a=>`<div class="card" style="border-left:4px solid ${g.c};padding-left:16px"><h5 style="color:${g.c};margin:0 0 8px;font-size:13px">${a.n}</h5><p style="color:${C.navy};font-size:12px;line-height:1.6;margin:0">${a.m}</p></div>`).join('')}</div></div>`).join('')}</div>`+
+  `<div class="card" style="background:${C.navy}">${h4('🔑 Principios de vehiculización efectiva',C.accent)}<div class="grid g2">${[{t:'Penetración optimizada',d:'Los microcanales aumentan la absorción de activos hasta 80–90% comparado con aplicación tópica convencional.'},{t:'Ventana de absorción',d:'Los primeros 15–30 minutos post-procedimiento son el momento óptimo para la penetración del activo.'},{t:'Sinergia terapéutica',d:'Combinar la profundidad correcta con el activo específico para cada objetivo maximiza el resultado clínico.'},{t:'Cierre de microcanales',d:'Los canales se cierran en 24–48h sin dejar cicatriz visible, restaurando la barrera cutánea de forma natural.'}].map(p=>`<div style="background:#1E3A5C;border-radius:10px;padding:14px"><div style="color:${C.accent};font-size:11px;font-weight:700;margin-bottom:6px">${p.t}</div><div style="color:#B0CDD8;font-size:11px;line-height:1.5">${p.d}</div></div>`).join('')}</div></div>`;
+}
+function rProtocolo(){
+  return sh('09 · Paso a Paso','Protocolo Universal','El orden es el mismo para todas las indicaciones. Lo que cambia entre ellas es la profundidad y el principio activo.')+
+  STEPS.map(s=>`<div class="card" style="display:flex;gap:16px;align-items:flex-start"><div class="stepn" style="background:${s.c}"><span>${s.icon}</span><span style="font-size:9px;font-weight:700;margin-top:2px">${s.num}</span></div><div><h5 style="color:${s.c};margin:0 0 6px;font-size:14px">${s.t}</h5><p style="color:${C.navy};font-size:12px;line-height:1.6;margin:0">${s.d}</p></div></div>`).join('')+
+  `<div class="card" style="background:${C.navy}">${h4('✅ Lo que debes recordar siempre',C.accent)}${['La profundidad determina la indicación — no es un número arbitrario ni una preferencia personal.','El activo trabaja solo en la capa que la aguja abrió. No va más profundo ni más superficial.','El resultado real llega con el tiempo. El procedimiento activa el proceso; el cuerpo construye el resultado.','A mayor profundidad → mayor estímulo → mayor tiempo de recuperación. Informar siempre al cliente.','La técnica es sinérgica: la microlesión potencia al activo, y el activo potencia la reparación.','El cartucho se cambia entre pacientes. Nunca se reutiliza. Sin excepciones.'].map(t=>`<div style="display:flex;gap:10px;align-items:flex-start;margin-bottom:10px"><span style="color:${C.accent};font-size:14px;line-height:1.4;flex-shrink:0">→</span><span style="color:#fff;font-size:12px;line-height:1.6">${t}</span></div>`).join('')}</div>`+
+  `<div class="card" style="background:${C.light}">${h4('📋 Factores que modulan la profundidad efectiva real')}<div class="grid g4">${[{icon:'💪',f:'Presión aplicada',d:'Mayor presión = mayor penetración efectiva real'},{icon:'⚡',f:'Velocidad de punción',d:'Más lenta = mayor profundidad alcanzada'},{icon:'🌿',f:'Tipo y zona de piel',d:'Piel más fina = menor profundidad recomendada'},{icon:'🎯',f:'Calibre de aguja',d:'Afecta el alcance y uniformidad del microcanal'}].map(f=>`<div style="background:#fff;border-radius:10px;padding:14px;text-align:center;box-shadow:0 1px 6px rgba(0,0,0,.06)"><div style="font-size:24px;margin-bottom:6px">${f.icon}</div><div style="color:${C.teal};font-weight:700;font-size:12px;margin-bottom:4px">${f.f}</div><div style="color:${C.muted};font-size:11px;line-height:1.4">${f.d}</div></div>`).join('')}</div></div>`;
+}
+
+const RENDERS={anatomia:rAnatomia,funciones:rFunciones,ciclo:rCiclo,principio:rPrincipio,respuesta:rRespuesta,protocolos:rProtocolos,dispositivo:rDispositivo,activos:rActivos,protocolo:rProtocolo};
+
+function setupTabs(btnsId,panesId){
+  const bEl=document.getElementById(btnsId);
+  if(!bEl) return;
+  bEl.querySelectorAll('.tbtn').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      const col=btn.dataset.color;
+      bEl.querySelectorAll('.tbtn').forEach(b=>{b.classList.remove('active');b.style.background='';b.style.borderColor='#ddd';b.style.color=''});
+      btn.classList.add('active');btn.style.background=col;btn.style.borderColor=col;btn.style.color='#fff';
+      document.getElementById(panesId).querySelectorAll('.tp').forEach(p=>p.classList.remove('active'));
+      document.getElementById(btn.dataset.tab).classList.add('active');
+    });
+  });
+}
+function show(id){
+  document.querySelectorAll('.sec').forEach(s=>s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  document.querySelectorAll('.nb').forEach(b=>b.classList.toggle('active',b.dataset.id===id));
+  window.scrollTo(0,0);
+}
+window.addEventListener('DOMContentLoaded',()=>{
+  const nav=document.getElementById('nav');
+  NAV.forEach(n=>{const b=document.createElement('button');b.className='nb';b.dataset.id=n.id;b.textContent=n.icon+' '+n.l;b.addEventListener('click',()=>show(n.id));nav.appendChild(b)});
+  NAV.forEach(n=>{document.getElementById(n.id).innerHTML=RENDERS[n.id]()});
+  setupTabs('ptabs','ppanes');
+  setupTabs('atabs','apanes');
+  show('anatomia');
+});
+</script>
+</body>
+</html>
